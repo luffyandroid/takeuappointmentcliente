@@ -17,6 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".CAProfesionalesActivity"></activity>
+        <activity android:name=".CBClienteActivity"></activity>
     </application>
 
 </manifest>
