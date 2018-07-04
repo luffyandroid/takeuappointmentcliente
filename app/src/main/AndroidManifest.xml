@@ -19,6 +19,7 @@
         <activity android:name=".BALoginActivity" />
         <activity android:name=".DAConfirmacionClienteActivity" />
         <activity android:name=".DAConfirmacionProfesionalesActivity"></activity>
+        <activity android:name=".CBClienteActivity"></activity>
     </application>
 
 </manifest>
