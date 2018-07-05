@@ -1,9 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".DAConfirmacionProfesionalesActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvDAConfProfesionalesUsuario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Usuario" />
+
+        <TextView
+            android:id="@+id/tvDAConfProfesionalesNombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nombre" />
+
+        <TextView
+            android:id="@+id/tvDAConfProfesionalesApellidos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Apellidos" />
+
+        <TextView
+            android:id="@+id/tvDAConfProfesionalesFecha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Fecha" />
+
+        <TextView
+            android:id="@+id/tvDAConfProfesionalesHora"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hora" />
+
+        <TextView
+            android:id="@+id/tvDAConfProfesionalesLugar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Lugar" />
+
+        <TextView
+            android:id="@+id/tvDAConfProfesionalesDireccion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Dirección" />
+
+        <Button
+            android:id="@+id/btnDAConfProfesionalesModificar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Modificar" />
+
+        <Button
+            android:id="@+id/btnDAConfProfesionalesCancelar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cancelar" />
+
+
+    </LinearLayout>
+</LinearLayout>
