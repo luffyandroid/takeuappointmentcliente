@@ -14,6 +14,7 @@ public class AASplashActivity extends AppCompatActivity {
     //TIEMPO PARA EL SPLASH
     private static final long SPLASH_SCREEN_DELAY = 3000;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,7 +29,7 @@ public class AASplashActivity extends AppCompatActivity {
 
                 //TERMINAR SPLASH E IR A SIGUIENTE ACTIVITY
                 Intent mainIntent = new Intent().setClass(
-                        AASplashActivity.this, BALoginActivity.class);
+                        AASplashActivity.this, CBClienteActivity.class);
                 startActivity(mainIntent);
 
                 //ELIMINAR

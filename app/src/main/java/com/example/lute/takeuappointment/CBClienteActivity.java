@@ -5,8 +5,10 @@ import android.app.Dialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import java.time.Year;
 import java.util.Calendar;
@@ -14,16 +16,14 @@ import java.util.Calendar;
 public class CBClienteActivity extends AppCompatActivity {
 
     //DECLARO INT VARIABLES CALENDARIO
-    private int dia, mes, ano;
 
-    //  //0
-    private static final int DIALOGO = 0;
-
-    //VARIABLE PARA PODER PICAR
-    private static DatePickerDialog.OnDateSetListener SelecFecha;
-
-    //DECLARO ELEMENTOS LAYOUT
-    EditText etCBClienteFecha;
+    Button btnCBClienteFecha;
+    TextView etCBClienteFecha;
+    DatePickerDialog datePickerDialog;
+    int year;
+    int month;
+    int dayOfMonth;
+    Calendar calendar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,61 +31,37 @@ public class CBClienteActivity extends AppCompatActivity {
         setContentView(R.layout.activity_cbcliente);
 
         //ENLAZO ELEMENTOS LAYOUT
-        etCBClienteFecha=(EditText)findViewById(R.id.etCBClienteFecha);
+        btnCBClienteFecha = findViewById(R.id.btnCBClienteFecha);
+        etCBClienteFecha = findViewById(R.id.etCBClienteFecha);
 
-        //--
-
-        //OBTENER FECHA ACTUAL
-        Calendar calendario = Calendar.getInstance();
-
-        //AÑADIR ELEMENTOS QUE RECOGERA EL CALENDARIO
-        dia = calendario.get(Calendar.DAY_OF_MONTH);
-        mes = calendario.get(Calendar.MONTH);
-        ano = calendario.get(Calendar.YEAR);
-
-        //--
-
-        //LLAMADA METODO MOSTRAR FECHA
-        mostrarFecha();
-
-        //PARA CAMBIAR LA FECHA AL PICAR
-        SelecFecha = new DatePickerDialog.OnDateSetListener() {
+        //BOTÓN CLICK
+        btnCBClienteFecha.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+            public void onClick(View view) {
 
-                //ENLAZAR INT CON LOS PICKERS
-                dia = dayOfMonth;
-                mes = month;
-                ano = year;
+                //OBTENER FECHA ACTUAL
+                calendar = Calendar.getInstance();
 
-                //LLAMADA METODO MOSTRAR FECHA
-                mostrarFecha();
+                //AÑADIR ELEMENTOS QUE RECOGERA EL CALENDARIO
+                year = calendar.get(Calendar.YEAR);
+                month = calendar.get(Calendar.MONTH);
+                dayOfMonth = calendar.get(Calendar.DAY_OF_MONTH);
 
+                //ACTIVAR EL CALENDARIO
+                datePickerDialog = new DatePickerDialog(CBClienteActivity.this,
+                        new DatePickerDialog.OnDateSetListener() {
+
+                            //METODO PARA MOSTRAR FECHA TV
+                            @Override
+                            public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+                                etCBClienteFecha.setText(day + "/" + (month + 1) + "/" + year); // +1 PORQUE EL MES DA -1
+                            }
+                        }, year, month, dayOfMonth);
+
+                //ABRIR Y MOSTRAR DIALOGO
+                datePickerDialog.getDatePicker().setMinDate(System.currentTimeMillis());
+                datePickerDialog.show();
             }
-        };
-
-  }
-
-    //ABRA EL DIALOGO PARA FECHA
-    @Override
-    protected Dialog onCreateDialog(int id) {
-        switch (id){
-            //SI NO HUBIERA CAMBIOS VOLVERRÍA AL ANTERIOR
-            case 0:
-                //TIENE QUE PONERSE EN ESE ORDEN PARA QUE SALGA CON LA FECHA ACTUAL
-                return new DatePickerDialog(this,SelecFecha, ano, mes, dia);
-        }
-        return null;
-    }
-
-    //CLICK ABRA DIALOGO
-    public void clickCBClienteFecha(View control){
-        showDialog(DIALOGO);
-    }
-
-    //METODO PARA MOSTRAR FECHA
-    public void mostrarFecha(){
-        etCBClienteFecha.setText(dia+"/"+(mes+1)+"/"+ano); //+1 PORQUE VA DEL 0 - 11
-
+        });
     }
 }
