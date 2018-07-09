@@ -29,6 +29,7 @@ public class ZAdaptadorProfesionales extends  RecyclerView.Adapter<ZAdaptadorPro
         return new ViewHolderClientes(view);
     }
 
+
     @Override
     public void onBindViewHolder(@NonNull ViewHolderClientes holder, int position) {
         holder.hora.setText(listaClientes.get(position).getChora());
