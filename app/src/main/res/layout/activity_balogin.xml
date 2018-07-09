@@ -35,3 +35,37 @@
         android:onClick="clickProf2"
         android:text="confirmacion profesionales" />
 </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/etBALoginDNI"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="DNI o NIE" />
+
+        <EditText
+            android:id="@+id/etBALoginPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Contraseña" />
+
+        <Button
+            android:id="@+id/btnBALoginAcceder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ACCEDE" />
+
+        <Button
+            android:id="@+id/btnBALoginOlvidado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="He olvidado mi contraseña" />
+    </LinearLayout>
+</LinearLayout>
