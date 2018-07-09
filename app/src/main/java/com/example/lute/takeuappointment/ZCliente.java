@@ -1,6 +1,9 @@
 package com.example.lute.takeuappointment;
 
-public class ZCliente {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class ZCliente implements Parcelable{
 
     String cusuario;
     String ccontrasena;
@@ -21,8 +24,27 @@ public class ZCliente {
     String c8;
     String c9;
     String c10;
+    int cimagen;
 
-    public ZCliente(String cusuario, String ccontrasena, String cnombre, String capellido, String cfecha, String chora, String clugar, String cdireccion, String cprofesional, String c1, String c2, String c3, String c4, String c5, String c6, String c7, String c8, String c9, String c10) {
+    public static final Parcelable.Creator<ZCliente> CREATOR = new
+            Parcelable.Creator<ZCliente>(){
+        public ZCliente createFromParcel(Parcel in){
+            return new ZCliente(in);
+        }
+
+        public ZCliente[] newArray(int size){
+            return new ZCliente[size];
+        }
+
+    };
+
+    //public ZCliente(){}
+
+
+    public ZCliente(String cusuario, String ccontrasena, String cnombre, String capellido,
+                    String cfecha, String chora, String clugar, String cdireccion,
+                    String cprofesional, String c1, String c2, String c3, String c4, String c5,
+                    String c6, String c7, String c8, String c9, String c10, int cimagen) {
         this.cusuario = cusuario;
         this.ccontrasena = ccontrasena;
         this.cnombre = cnombre;
@@ -42,7 +64,13 @@ public class ZCliente {
         this.c8 = c8;
         this.c9 = c9;
         this.c10 = c10;
+        this.cimagen = cimagen;
     }
+
+    public ZCliente(Parcel p){
+        readfromParcel(p);
+    }
+
 
     public String getCusuario() {
         return cusuario;
@@ -194,5 +222,68 @@ public class ZCliente {
 
     public void setC10(String c10) {
         this.c10 = c10;
+    }
+
+    public int getCimagen() {
+        return cimagen;
+    }
+
+    public void setCimagen(int cimagen) {
+        this.cimagen = cimagen;
+    }
+
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(this.cusuario);
+        dest.writeString(this.ccontrasena);
+        dest.writeString(this.cnombre);
+        dest.writeString(this.capellido);
+        dest.writeString(this.cfecha);
+        dest.writeString(this.chora);
+        dest.writeString(this.clugar);
+        dest.writeString(this.cdireccion);
+        dest.writeString(this.cprofesional);
+        dest.writeString(this.c1);
+        dest.writeString(this.c2);
+        dest.writeString(this.c3);
+        dest.writeString(this.c4);
+        dest.writeString(this.c5);
+        dest.writeString(this.c6);
+        dest.writeString(this.c7);
+        dest.writeString(this.c8);
+        dest.writeString(this.c9);
+        dest.writeString(this.c10);
+        dest.writeInt(this.cimagen);
+
+    }
+
+    private void readfromParcel(Parcel p){
+        this.cusuario = p.readString();
+        this.ccontrasena = p.readString();
+        this.cnombre = p.readString();
+        this.capellido = p.readString();
+        this.cfecha = p.readString();
+        this.chora = p.readString();
+        this.clugar = p.readString();
+        this.clugar = p.readString();
+        this.cdireccion = p.readString();
+        this.cprofesional = p.readString();
+        this.c1 = p.readString();
+        this.c2 = p.readString();
+        this.c3 = p.readString();
+        this.c4 = p.readString();
+        this.c5 = p.readString();
+        this.c6 = p.readString();
+        this.c7 = p.readString();
+        this.c8 = p.readString();
+        this.c9 = p.readString();
+        this.c10 = p.readString();
+        this.cimagen = p.readInt();
     }
 }
