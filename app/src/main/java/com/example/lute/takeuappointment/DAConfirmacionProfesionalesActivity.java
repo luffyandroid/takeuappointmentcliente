@@ -25,6 +25,8 @@ public class DAConfirmacionProfesionalesActivity extends AppCompatActivity {
         tvDAConfProfesionalesLugar=(TextView)findViewById(R.id.tvDAConfProfesionalesLugar);
         tvDAConfProfesionalesDireccion=(TextView)findViewById(R.id.tvDAConfProfesionalesDireccion);
     }
+
+    //BOTON PROVISIONAL
     public void ClickLogin4(View view){
         Intent i = new Intent().setClass(getApplicationContext(), BALoginActivity.class);
         startActivity(i);

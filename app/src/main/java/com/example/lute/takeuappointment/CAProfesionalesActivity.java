@@ -29,6 +29,7 @@ public class CAProfesionalesActivity extends AppCompatActivity {
         recyclerClientes.setAdapter(adapter);
     }
 
+    //BOTON PROVISIONAL
     public void ClickLogin1(View view){
         Intent i = new Intent().setClass(getApplicationContext(), BALoginActivity.class);
         startActivity(i);

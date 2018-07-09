@@ -21,6 +21,7 @@ public class BALoginActivity extends AppCompatActivity {
         etBALoginPassword=(EditText)findViewById(R.id.etBALoginPassword);
     }
 
+    //BOTONES PROVISIONALES
     public void clickProf1(View view){
         Intent i = new Intent().setClass(getApplicationContext(), CAProfesionalesActivity.class);
         startActivity(i);

@@ -26,6 +26,7 @@ public class DAConfirmacionClienteActivity extends AppCompatActivity {
         tvDAConfClienteDireccion=(TextView)findViewById(R.id.tvDAConfClienteDireccion);
     }
 
+    //BOTON PROVISIONAL
     public void ClickLogin3(View view){
         Intent i = new Intent().setClass(getApplicationContext(), BALoginActivity.class);
         startActivity(i);

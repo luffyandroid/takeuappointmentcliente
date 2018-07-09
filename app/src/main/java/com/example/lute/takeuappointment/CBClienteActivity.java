@@ -31,14 +31,6 @@ public class CBClienteActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cbcliente);
-    }
-
-    public void ClickLogin2(View view){
-        Intent i = new Intent().setClass(getApplicationContext(), BALoginActivity.class);
-        startActivity(i);
-    }
-
-}
 
         //ENLAZO ELEMENTOS LAYOUT
         btnCBClienteFecha = findViewById(R.id.btnCBClienteFecha);
@@ -74,4 +66,14 @@ public class CBClienteActivity extends AppCompatActivity {
             }
         });
     }
+
+    //BOTON PROVISINAL
+    public void ClickLogin2(View view){
+        Intent i = new Intent().setClass(getApplicationContext(), BALoginActivity.class);
+        startActivity(i);
+    }
+
 }
+
+
+
