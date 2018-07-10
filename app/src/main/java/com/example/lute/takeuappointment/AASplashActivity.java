@@ -29,7 +29,7 @@ public class AASplashActivity extends AppCompatActivity {
 
                 //TERMINAR SPLASH E IR A SIGUIENTE ACTIVITY
                 Intent mainIntent = new Intent().setClass(
-                        AASplashActivity.this, CBClienteActivity.class);
+                        AASplashActivity.this, BALoginActivity.class);
                 startActivity(mainIntent);
 
                 //ELIMINAR

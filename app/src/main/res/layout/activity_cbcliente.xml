@@ -12,6 +12,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        
         android:orientation="vertical">
 
 
@@ -29,13 +30,13 @@
             android:layout_height="wrap_content"
             android:text="Fecha"
             android:onClick="clickCBClienteFecha"/>
+
+        <Button
+            android:id="@+id/btnNext3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="ClickLogin2"
+            android:text="Volver al Login" />
     </LinearLayout>
 
-    <Button
-        android:id="@+id/btnNext3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="ClickLogin2"
-        android:text="Volver al Login"
-        />
 </LinearLayout>
