@@ -5,7 +5,6 @@ public class ZProfesional {
     String pusuario;
     String pcontrasena;
     String pnombre;
-    String papellido;
     String plugar;
     String pdireccion;
     int pimagen;
@@ -20,14 +19,13 @@ public class ZProfesional {
     String p9;
     String p10;
 
-    public ZProfesional(String pusuario, String pcontrasena, String pnombre, String papellido,
+    public ZProfesional(String pusuario, String pcontrasena, String pnombre,
                         String plugar, String pdireccion, int pimagen, String p1, String p2,
                         String p3, String p4, String p5, String p6, String p7, String p8, String p9,
                         String p10) {
         this.pusuario = pusuario;
         this.pcontrasena = pcontrasena;
         this.pnombre = pnombre;
-        this.papellido = papellido;
         this.plugar = plugar;
         this.pdireccion = pdireccion;
         this.pimagen = pimagen;
@@ -65,14 +63,6 @@ public class ZProfesional {
 
     public void setPnombre(String pnombre) {
         this.pnombre = pnombre;
-    }
-
-    public String getPapellido() {
-        return papellido;
-    }
-
-    public void setPapellido(String papellido) {
-        this.papellido = papellido;
     }
 
     public String getPlugar() {

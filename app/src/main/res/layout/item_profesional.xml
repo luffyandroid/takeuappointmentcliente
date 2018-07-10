@@ -21,25 +21,24 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:orientation="vertical"
             android:padding="0dp">
 
             <ImageView
                 android:id="@+id/ivItemProfImagen"
-                android:layout_width="wrap_content"
-                android:layout_height="44dp"
-                android:layout_weight="1"
+                android:layout_width="@dimen/d80"
+                android:layout_height="@dimen/d80"
                 app:srcCompat="@mipmap/ic_launcher" />
 
             <Button
-                android:id="@+id/btnItemProf"
-                android:layout_width="wrap_content"
-                android:layout_height="25dp"
-                android:layout_margin="0dp"
-                android:layout_weight="1"
-                android:text="Imagen"
-                android:textSize="5dp" />
+                android:id="@+id/btnItemProfImagen"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/d30"
+                android:textSize="@dimen/d8"
+                android:text="subir imagen"
+                android:onClick="ClickImagen"/>
+
+
         </LinearLayout>
 
         <LinearLayout
@@ -52,18 +51,18 @@
                 android:id="@+id/tvItemProfNombre"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:gravity="center_vertical"
                 android:padding="5dp"
-                android:text="TextView" />
+                android:text="TextView"
+                android:textSize="@dimen/d15" />
 
             <EditText
                 android:id="@+id/etItemProfDatos"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_height="match_parent"
                 android:ems="10"
-                android:inputType="textMultiLine" />
+                android:inputType="textMultiLine"
+                android:textSize="10dp" />
         </LinearLayout>
     </LinearLayout>
 

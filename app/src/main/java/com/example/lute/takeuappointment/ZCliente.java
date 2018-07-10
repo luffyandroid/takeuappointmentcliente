@@ -8,7 +8,6 @@ public class ZCliente implements Parcelable{
     String cusuario;
     String ccontrasena;
     String cnombre;
-    String capellido;
     String cfecha;
     String chora;
     String clugar;
@@ -41,14 +40,13 @@ public class ZCliente implements Parcelable{
     //public ZCliente(){}
 
 
-    public ZCliente(String cusuario, String ccontrasena, String cnombre, String capellido,
+    public ZCliente(String cusuario, String ccontrasena, String cnombre,
                     String cfecha, String chora, String clugar, String cdireccion,
                     String cprofesional, String c1, String c2, String c3, String c4, String c5,
                     String c6, String c7, String c8, String c9, String c10, int cimagen) {
         this.cusuario = cusuario;
         this.ccontrasena = ccontrasena;
         this.cnombre = cnombre;
-        this.capellido = capellido;
         this.cfecha = cfecha;
         this.chora = chora;
         this.clugar = clugar;
@@ -94,14 +92,6 @@ public class ZCliente implements Parcelable{
 
     public void setCnombre(String cnombre) {
         this.cnombre = cnombre;
-    }
-
-    public String getCapellido() {
-        return capellido;
-    }
-
-    public void setCapellido(String capellido) {
-        this.capellido = capellido;
     }
 
     public String getCfecha() {
@@ -243,7 +233,6 @@ public class ZCliente implements Parcelable{
         dest.writeString(this.cusuario);
         dest.writeString(this.ccontrasena);
         dest.writeString(this.cnombre);
-        dest.writeString(this.capellido);
         dest.writeString(this.cfecha);
         dest.writeString(this.chora);
         dest.writeString(this.clugar);
@@ -267,7 +256,6 @@ public class ZCliente implements Parcelable{
         this.cusuario = p.readString();
         this.ccontrasena = p.readString();
         this.cnombre = p.readString();
-        this.capellido = p.readString();
         this.cfecha = p.readString();
         this.chora = p.readString();
         this.clugar = p.readString();

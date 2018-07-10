@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.lute.takeuappointment">
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"></uses-permission>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -17,10 +19,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".BALoginActivity" />
-        <activity android:name=".DAConfirmacionClienteActivity" />
-        <activity android:name=".DAConfirmacionProfesionalesActivity"></activity>
         <activity android:name=".CAProfesionalesActivity"></activity>
         <activity android:name=".CBClienteActivity"></activity>
+        <activity android:name=".DAConfirmacionClienteActivity"></activity>
+        <activity android:name=".DAConfirmacionProfesionalesActivity"></activity>
+
     </application>
 
 </manifest>
