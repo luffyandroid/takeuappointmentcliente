@@ -21,43 +21,43 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/tvDAConfProfesionalesHora"
+                    android:id="@+id/tvDAConfClienteHora"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Hora" />
 
                 <TextView
-                    android:id="@+id/tvDAConfProfesionalesDireccion"
+                    android:id="@+id/tvDAConfClienteDireccion"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Dirección" />
 
                 <TextView
-                    android:id="@+id/tvDAConfProfesionalesApellidos"
+                    android:id="@+id/tvDAConfClienteApellidos"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Apellidos" />
 
                 <TextView
-                    android:id="@+id/tvDAConfProfesionalesFecha"
+                    android:id="@+id/tvDAConfClienteFecha"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Fecha" />
 
                 <TextView
-                    android:id="@+id/tvDAConfProfesionalesLugar"
+                    android:id="@+id/tvDAConfClienteLugar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Lugar" />
 
                 <TextView
-                    android:id="@+id/tvDAConfProfesionalesUsuario"
+                    android:id="@+id/tvDAConfClienteUsuario"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Usuario" />
 
                 <TextView
-                    android:id="@+id/tvDAConfProfesionalesNombre"
+                    android:id="@+id/tvDAConfClienteNombre"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Nombre" />
@@ -77,14 +77,14 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/btnDAConfProfesionalesModificar"
+                    android:id="@+id/btnDAConfClienteModificar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Modificar" />
 
                 <Button
-                    android:id="@+id/btnDAConfProfesionalesCancelar"
+                    android:id="@+id/btnDAConfClienteCancelar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
