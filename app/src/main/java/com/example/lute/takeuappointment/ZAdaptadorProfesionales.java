@@ -53,9 +53,9 @@ public class ZAdaptadorProfesionales extends  RecyclerView.Adapter<ZAdaptadorPro
         public ViewHolderClientes(View itemView) {
             super(itemView);
             imagen= (ImageView) itemView.findViewById(R.id.ivItemProfImagen);
-            hora= (TextView) itemView.findViewById(R.id.tvItemProfHora);
+            hora= (TextView) itemView.findViewById(R.id.tvItemProfFecha);
             nombre= (TextView) itemView.findViewById(R.id.tvItemProfNombre);
-            datos= (EditText) itemView.findViewById(R.id.etItemProfDatos);
+            datos= (EditText) itemView.findViewById(R.id.tvItemProfDatos);
         }
     }
 }

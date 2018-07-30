@@ -7,36 +7,135 @@
     android:orientation="vertical"
     tools:context=".CBClienteActivity">
 
-
-
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        
-        android:orientation="vertical">
+        android:layout_height="@dimen/d50"
+        android:background="@color/VerdeBase"
+        android:orientation="horizontal">
 
-
-        <EditText
-            android:id="@+id/etCBClienteFecha"
+        <TextView
+            android:id="@+id/tvCBClienteCabecera"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="20"
-            android:inputType="date"
-            android:text="Fecha" />
+            style="@style/Cabecera"
+            android:text="• CALENDARIO •"
+            android:textAlignment="center" />
 
-        <Button
-            android:id="@+id/btnCBClienteFecha"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Fecha"
-            android:onClick="clickCBClienteFecha"/>
-
-        <Button
-            android:id="@+id/btnNext3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="ClickLogin2"
-            android:text="Volver al Login" />
     </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <EditText
+                android:id="@+id/etCBClienteFecha"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/d5"
+                android:ems="20"
+                android:inputType="date"
+                android:text="Fecha" />
+
+            <Button
+                android:id="@+id/btnCBClienteFecha"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/d5"
+                android:textAlignment="textStart"
+                android:drawablePadding="@dimen/d10"
+                android:background="@color/VerdeBase2"
+                android:drawableLeft="@drawable/ico_btn_calendar"
+                android:onClick="clickCBClienteFecha"
+                android:text="Fecha" />
+
+            <EditText
+                android:id="@+id/etCBClienteHora"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/d5"
+                android:ems="20"
+                android:inputType="date"
+                android:text="Hora" />
+
+            <Button
+                android:id="@+id/btnCBClienteHora"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/d5"
+                android:textAlignment="textStart"
+                android:drawablePadding="@dimen/d10"
+                android:background="@color/VerdeBase2"
+                android:drawableLeft="@drawable/ico_btn_clock"
+                android:text="Hora"
+                android:onClick="clickCBClienteHora"/>
+
+            <EditText
+                android:id="@+id/etCBDireccion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/d5"
+                android:ems="20"
+                android:inputType="date"
+                android:text="Dirección" />
+
+            <Button
+                android:id="@+id/btnCBClienteDireccion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/d5"
+                android:textAlignment="textStart"
+                android:drawablePadding="@dimen/d10"
+                android:background="@color/VerdeBase2"
+                android:drawableLeft="@drawable/ico_btn_direccion"
+                android:text="Dirección"
+                android:onClick="clickCBClienteDireccion"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="bottom">
+
+            <Button
+                android:id="@+id/btnCBClienteVolver"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/d5"
+                android:textAlignment="textStart"
+                android:drawablePadding="@dimen/d10"
+                android:paddingRight="@dimen/d5"
+                android:background="@color/LightGrey"
+                android:drawableLeft="@drawable/ico_btn_negocios"
+                android:onClick="clickCBClienteVolverEmpresas"
+                android:layout_weight="1"
+                android:text="Volver a                    empresas" />
+
+            <Button
+                android:id="@+id/btnCBClienteSiguiente"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/d5"
+                android:textAlignment="textEnd"
+                android:drawablePadding="@dimen/d10"
+                android:background="@color/VerdeBase2"
+                android:paddingLeft="@dimen/d5"
+                android:drawableRight="@drawable/ico_btn_flechadelante"
+                android:onClick="clickCBClienteSeguirCita"
+                android:layout_weight="1"
+                android:text="Seguir adelante con la cita" />
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
 
 </LinearLayout>

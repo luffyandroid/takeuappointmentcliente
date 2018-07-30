@@ -7,11 +7,30 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
-    <!-- Hello -->
 
-    //Comentario chorra 1
-    //Comentario chorra 2
-    //Comentario chorra 3
-    //Comentario chorra 4
+    <!-- Texto cabeceras -->
+    <style name="Cabecera">
+        <item name="android:fontFamily">@font/coolvetica</item>
+        <item name="android:textColor">@color/NegroBase</item>
+        <item name="android:textSize">@dimen/d18</item>
+        <item name="android:padding">@dimen/d10</item>
+    </style>
+
+    <!-- Texto botones redes -->
+    <style name="textredes" parent="Cabecera">
+        <item name="android:textColor">@color/Blanco</item>
+        <item name="android:textSize">@dimen/d20</item>
+    </style>
+
+    <!-- Texto info -->
+    <style name="Info">
+        <item name="android:textColor">@color/NegroBase</item>
+        <item name="android:textSize">@dimen/d20</item>
+        <item name="android:paddingLeft">@dimen/d18</item>
+        <item name="android:background">@color/LightGrey</item>
+        <item name="android:layout_margin">@dimen/d5</item>
+    </style>
+
+
 
 </resources>

@@ -7,93 +7,133 @@
     android:orientation="vertical"
     tools:context=".DAConfirmacionProfesionalesActivity">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/tvDAConfProfesionalesHora"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Hora" />
-
-            <TextView
-                android:id="@+id/tvDAConfProfesionalesDireccion"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Dirección" />
-
-            <TextView
-                android:id="@+id/tvDAConfProfesionalesApellidos"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Apellidos" />
-
-            <TextView
-                android:id="@+id/tvDAConfProfesionalesFecha"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Fecha" />
-
-            <TextView
-                android:id="@+id/tvDAConfProfesionalesLugar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Lugar" />
-
-            <TextView
-                android:id="@+id/tvDAConfProfesionalesUsuario"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Usuario" />
-
-            <TextView
-                android:id="@+id/tvDAConfProfesionalesNombre"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Nombre" />
-        </LinearLayout>
-    </ScrollView>
-
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:orientation="vertical">
+        android:layout_height="@dimen/d50"
+        android:background="@color/VerdeBase"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tvDAConfProfesionalesCabecera"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Cabecera"
+            android:text="• DATOS CITA DEL CLIENTE •"
+            android:textAlignment="center" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="horizontal">
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical">
 
-            <Button
-                android:id="@+id/btnDAConfProfesionalesModificar"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Modificar" />
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnDAConfProfesionalesModificar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/LightGrey"
+                    android:drawableLeft="@drawable/ico_btn_modificar"
+                    android:onClick="ClickDAProfesionalesModificar"
+                    android:text="Modificar" />
+
+                <Button
+                    android:id="@+id/btnDAConfProfesionalesCancelar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/IndianRed"
+                    android:drawableRight="@drawable/ico_btn_cancelar"
+                    android:text="Cancelar"
+                    android:onClick="ClickDAProfesionalesCancelar"
+                    android:textColor="@color/Blanco" />
+            </LinearLayout>
 
             <Button
-                android:id="@+id/btnDAConfProfesionalesCancelar"
+                android:id="@+id/btnDAProfesionalesConfirmar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Cancelar" />
+                android:background="@color/VerdeBase2"
+                android:drawablePadding="@dimen/d10"
+                android:drawableRight="@drawable/ico_btn_confirmacion"
+                android:onClick="ClickDAProfesionalesConfirmar"
+                android:paddingRight="@dimen/d5"
+                android:text="Confimar"
+                android:textAlignment="textEnd" />
         </LinearLayout>
 
-        <Button
-            android:id="@+id/btnNext4"
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="ClickLogin4"
-            android:text="Volver al Login" />
-    </LinearLayout>
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvDAConfProfesionalesHora"
+                    style="@style/Info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Hora" />
+
+                <TextView
+                    android:id="@+id/tvDAConfProfesionalesDireccion"
+                    style="@style/Info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Dirección" />
+
+                <TextView
+                    android:id="@+id/tvDAConfProfesionalesApellidos"
+                    style="@style/Info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Apellidos" />
+
+                <TextView
+                    android:id="@+id/tvDAConfProfesionalesFecha"
+                    style="@style/Info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Fecha" />
+
+                <TextView
+                    android:id="@+id/tvDAConfProfesionalesLugar"
+                    style="@style/Info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Lugar" />
+
+                <TextView
+                    android:id="@+id/tvDAConfProfesionalesUsuario"
+                    style="@style/Info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Usuario" />
+
+                <TextView
+                    android:id="@+id/tvDAConfProfesionalesNombre"
+                    style="@style/Info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Nombre" />
+            </LinearLayout>
+        </ScrollView>
+    </RelativeLayout>
 
 
 </LinearLayout>

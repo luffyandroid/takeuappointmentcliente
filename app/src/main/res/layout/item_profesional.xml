@@ -5,23 +5,20 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/tvItemProfHora"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="TextView" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
+        style="@style/Info"
+        android:padding="@dimen/d10"
         android:orientation="horizontal">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
+
             android:padding="0dp">
 
             <ImageView
@@ -29,14 +26,6 @@
                 android:layout_width="@dimen/d80"
                 android:layout_height="@dimen/d80"
                 app:srcCompat="@mipmap/ic_launcher" />
-
-            <Button
-                android:id="@+id/btnItemProfImagen"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/d30"
-                android:textSize="@dimen/d8"
-                android:text="subir imagen"
-                android:onClick="ClickImagen"/>
 
 
         </LinearLayout>
@@ -49,20 +38,34 @@
 
             <TextView
                 android:id="@+id/tvItemProfNombre"
+                style="@style/Info"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:gravity="center_vertical"
-                android:padding="5dp"
-                android:text="TextView"
+                android:text="Nombre y Apellidos del cliente"
                 android:textSize="@dimen/d15" />
 
-            <EditText
-                android:id="@+id/etItemProfDatos"
+            <TextView
+                android:id="@+id/tvItemProfFecha"
+                style="@style/Info"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:ems="10"
-                android:inputType="textMultiLine"
-                android:textSize="10dp" />
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="Hora y fecha de la cita"
+                android:textSize="@dimen/d15" />
+
+            <TextView
+                android:id="@+id/tvItemProfDatos"
+                style="@style/Info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="Otros datos del cliente"
+                android:textSize="@dimen/d15" />
+
         </LinearLayout>
     </LinearLayout>
 

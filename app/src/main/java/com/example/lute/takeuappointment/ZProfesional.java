@@ -1,10 +1,15 @@
 package com.example.lute.takeuappointment;
 
-public class ZProfesional {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class ZProfesional implements Parcelable{
 
     String pusuario;
     String pcontrasena;
     String pnombre;
+    String pempresa;
+    String pdescripcion;
     String plugar;
     String pdireccion;
     int pimagen;
@@ -19,13 +24,27 @@ public class ZProfesional {
     String p9;
     String p10;
 
-    public ZProfesional(String pusuario, String pcontrasena, String pnombre,
+    public static final Parcelable.Creator<ZProfesional> CREATOR = new
+            Parcelable.Creator<ZProfesional>(){
+                public ZProfesional createFromParcel(Parcel in){
+                    return new ZProfesional(in);
+                }
+
+                public ZProfesional[] newArray(int size){
+                    return new ZProfesional[size];
+                }
+
+            };
+
+    public ZProfesional(String pusuario, String pcontrasena, String pnombre, String pempresa, String pdescripcion,
                         String plugar, String pdireccion, int pimagen, String p1, String p2,
                         String p3, String p4, String p5, String p6, String p7, String p8, String p9,
                         String p10) {
         this.pusuario = pusuario;
         this.pcontrasena = pcontrasena;
         this.pnombre = pnombre;
+        this.pempresa = pempresa;
+        this.pdescripcion = pdescripcion;
         this.plugar = plugar;
         this.pdireccion = pdireccion;
         this.pimagen = pimagen;
@@ -39,6 +58,10 @@ public class ZProfesional {
         this.p8 = p8;
         this.p9 = p9;
         this.p10 = p10;
+    }
+
+    public ZProfesional(Parcel p){
+        readfromParcel(p);
     }
 
     public String getPusuario() {
@@ -63,6 +86,22 @@ public class ZProfesional {
 
     public void setPnombre(String pnombre) {
         this.pnombre = pnombre;
+    }
+
+    public String getPempresa() {
+        return pempresa;
+    }
+
+    public void setPempresa(String pempresa) {
+        this.pempresa = pempresa;
+    }
+
+    public String getPdescripcion() {
+        return pdescripcion;
+    }
+
+    public void setPdescripcion(String pdescripcion) {
+        this.pdescripcion = pdescripcion;
     }
 
     public String getPlugar() {
@@ -167,5 +206,54 @@ public class ZProfesional {
 
     public void setP10(String p10) {
         this.p10 = p10;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(this.pusuario);
+        dest.writeString(this.pcontrasena);
+        dest.writeString(this.pnombre);
+        dest.writeString(this.pempresa);
+        dest.writeString(this.pdescripcion);
+        dest.writeString(this.plugar);
+        dest.writeString(this.pdireccion);
+        dest.writeString(this.p1);
+        dest.writeString(this.p2);
+        dest.writeString(this.p3);
+        dest.writeString(this.p4);
+        dest.writeString(this.p5);
+        dest.writeString(this.p6);
+        dest.writeString(this.p7);
+        dest.writeString(this.p8);
+        dest.writeString(this.p9);
+        dest.writeString(this.p10);
+        dest.writeInt(this.pimagen);
+
+    }
+    private void readfromParcel(Parcel p){
+        this.pusuario = p.readString();
+        this.pcontrasena = p.readString();
+        this.pnombre = p.readString();
+        this.pempresa = p.readString();
+        this.pdescripcion = p.readString();
+        this.plugar = p.readString();
+        this.plugar = p.readString();
+        this.pdireccion = p.readString();
+        this.p1 = p.readString();
+        this.p2 = p.readString();
+        this.p3 = p.readString();
+        this.p4 = p.readString();
+        this.p5 = p.readString();
+        this.p6 = p.readString();
+        this.p7 = p.readString();
+        this.p8 = p.readString();
+        this.p9 = p.readString();
+        this.p10 = p.readString();
+        this.pimagen = p.readInt();
     }
 }

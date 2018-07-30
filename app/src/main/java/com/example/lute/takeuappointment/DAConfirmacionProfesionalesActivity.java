@@ -26,9 +26,21 @@ public class DAConfirmacionProfesionalesActivity extends AppCompatActivity {
         tvDAConfProfesionalesDireccion=(TextView)findViewById(R.id.tvDAConfProfesionalesDireccion);
     }
 
-    //BOTON PROVISIONAL
-    public void ClickLogin4(View view){
-        Intent i = new Intent().setClass(getApplicationContext(), BALoginActivity.class);
+    //BOTON VOLVER ANTERIOR ACTIVITY
+    public void ClickDAProfesionalesModificar(View view) {
+       /*  Intent i = new Intent().setClass(getApplicationContext(), CBClienteActivity.class);
+        startActivity(i);*/
+    }
+
+    //BOTON CANCELAR CITA
+    public void ClickDAProfesionalesCancelar(View view) {
+      /*  Intent i = new Intent().setClass(getApplicationContext(), BBMenuClienteActivity.class);
+        startActivity(i);*/
+    }
+
+    //BOTON VOLVER ACTIVITY MENU
+    public void ClickDAProfesionalesConfirmar(View view) {
+        Intent i = new Intent().setClass(getApplicationContext(), CAProfesionalesActivity.class);
         startActivity(i);
     }
 

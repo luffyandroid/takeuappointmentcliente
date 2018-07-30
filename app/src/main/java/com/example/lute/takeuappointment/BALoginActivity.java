@@ -39,4 +39,10 @@ public class BALoginActivity extends AppCompatActivity {
         startActivity(i);
     }
 
+    //BOTON VOLVER ANTERIOR ACTIVITY
+    public void ClickGoogle(View view) {
+       Intent i = new Intent().setClass(getApplicationContext(), BBMenuClienteActivity.class);
+        startActivity(i);
+    }
+
 }

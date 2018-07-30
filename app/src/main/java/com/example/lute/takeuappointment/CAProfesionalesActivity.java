@@ -28,7 +28,7 @@ public class CAProfesionalesActivity extends AppCompatActivity {
 
         //MOSTRAR LISTA DE CLIENTES
         listaClientes = new ArrayList<>();
-        recyclerClientes = (RecyclerView) findViewById(R.id.rvProfesionales);
+        recyclerClientes = (RecyclerView) findViewById(R.id.listCAProfesionales);
         recyclerClientes.setLayoutManager(new LinearLayoutManager(this));
 
         datosClientes();
@@ -65,13 +65,13 @@ public class CAProfesionalesActivity extends AppCompatActivity {
 
     private void datosClientes(){
         listaClientes.add(new ZCliente("","","Melania Gallego de los Santos","","17:30","","","","","","","","","","","","","",R.drawable.imagen_no_disponible));
-        listaClientes.add(new ZCliente("","","","","","","","","","","","","","","","","","",R.drawable.imagen_no_disponible));
-        listaClientes.add(new ZCliente("","","","","","","","","","","","","","","","","","",R.drawable.imagen_no_disponible));
-        listaClientes.add(new ZCliente("","","","","","","","","","","","","","","","","","",R.drawable.imagen_no_disponible));
-        listaClientes.add(new ZCliente("","","","","","","","","","","","","","","","","","",R.drawable.imagen_no_disponible));
-        listaClientes.add(new ZCliente("","","","","","","","","","","","","","","","","","",R.drawable.imagen_no_disponible));
-        listaClientes.add(new ZCliente("","","","","","","","","","","","","","","","","","",R.drawable.imagen_no_disponible));
-        listaClientes.add(new ZCliente("","","","","","","","","","","","","","","","","","",R.drawable.imagen_no_disponible));
+        listaClientes.add(new ZCliente("","","","","","","","","","","","","","","","","","",R.drawable.bc));
+        listaClientes.add(new ZCliente("","","","","","","","","","","","","","","","","","",R.drawable.cb));
+        listaClientes.add(new ZCliente("","","","","","","","","","","","","","","","","","",R.drawable.cc));
+        listaClientes.add(new ZCliente("","","","","","","","","","","","","","","","","","",R.drawable.gew));
+        listaClientes.add(new ZCliente("","","","","","","","","","","","","","","","","","",R.drawable.hr));
+        listaClientes.add(new ZCliente("","","","","","","","","","","","","","","","","","",R.drawable.lal));
+        listaClientes.add(new ZCliente("","","","","","","","","","","","","","","","","","",R.drawable.uj));
     }
 
 }

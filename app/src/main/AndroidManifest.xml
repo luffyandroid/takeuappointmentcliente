@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.lute.takeuappointment">
 
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"></uses-permission>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -11,7 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AASplashActivity">
+        <activity android:name=".CBClienteActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -19,11 +19,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".BALoginActivity" />
-        <activity android:name=".CAProfesionalesActivity"></activity>
-        <activity android:name=".CBClienteActivity"></activity>
-        <activity android:name=".DAConfirmacionClienteActivity"></activity>
-        <activity android:name=".DAConfirmacionProfesionalesActivity"></activity>
-
+        <activity android:name=".CAProfesionalesActivity" />
+        <activity android:name=".AASplashActivity" />
+        <activity android:name=".DAConfirmacionClienteActivity" />
+        <activity android:name=".DAConfirmacionProfesionalesActivity" />
+        <activity android:name=".BBMenuClienteActivity"></activity>
     </application>
 
 </manifest>

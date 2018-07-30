@@ -9,8 +9,24 @@
 
     <LinearLayout
         android:layout_width="match_parent"
+        android:layout_height="@dimen/d50"
+        android:background="@color/VerdeBase"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tvBALoginCabecera"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Cabecera"
+            android:text="• ACCESO DEL USUARIO •"
+            android:textAlignment="center" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:visibility="gone">
 
         <EditText
             android:id="@+id/etBALoginDNI"
@@ -42,9 +58,48 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_marginTop="150dp">
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/btnBALoginFacebook"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ico_redes_facebook"
+            android:background="@color/AzulFacebook"
+            style="@style/textredes"
+            android:layout_marginVertical="@dimen/d14"
+            android:text="Login con tu Facebook" />
+
+        <Button
+            android:id="@+id/btnBALoginGoogle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ico_redes_google"
+            android:background="@color/RojoGoogle"
+            style="@style/textredes"
+            android:layout_marginVertical="@dimen/d14"
+            android:text="Login con tu      Google"
+            android:onClick="ClickGoogle"/>
+
+        <Button
+            android:id="@+id/btnBALoginTwitter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ico_redes_twitter"
+            android:background="@color/AzulTwitter"
+            style="@style/textredes"
+            android:layout_marginVertical="@dimen/d14"
+            android:text="Login con tu Twitter" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        android:orientation="vertical">
 
         <Button
             android:id="@+id/btnNext1"

@@ -6,14 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".AASplashActivity">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
+    <ImageView
+        android:id="@+id/ivAASplash"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
         android:layout_weight="1"
-        android:text="Splash!"
-        android:textAlignment="center"
-        android:textSize="30sp"
-        android:textStyle="bold" />
+        android:padding="@dimen/d50"
+        app:srcCompat="@drawable/logo_agenda_splash" />
 </LinearLayout>

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".CAProfesionalesActivity">
+    tools:context=".BBMenuClienteActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,7 +14,7 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/tvCAProfesionalesCabecera"
+            android:id="@+id/tvBBMenuClienteCabecera"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/Cabecera"
@@ -23,8 +23,20 @@
 
     </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/LightGrey"
+            android:orientation="horizontal">
+
+            <SearchView
+                android:id="@+id/searchBBMenuCliente"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/listCAProfesionales"
+        android:id="@+id/listBBMenuCliente"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1">
@@ -32,9 +44,10 @@
     </android.support.v7.widget.RecyclerView>
 
     <Button
-        android:id="@+id/btnNext2"
+        android:id="@+id/btBBMenuCliente"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="ClickLogin1"
         android:text="Volver al Login" />
+
 </LinearLayout>

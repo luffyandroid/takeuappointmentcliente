@@ -7,6 +7,22 @@
     android:orientation="vertical"
     tools:context=".DAConfirmacionClienteActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/d50"
+        android:background="@color/VerdeBase"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tvDAConfClienteCabecera"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Cabecera"
+            android:text="• CONFIRMACIÓN DE LA CITA •"
+            android:textAlignment="center" />
+
+    </LinearLayout>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -24,42 +40,49 @@
                     android:id="@+id/tvDAConfClienteHora"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    style="@style/Info"
                     android:text="Hora" />
 
                 <TextView
                     android:id="@+id/tvDAConfClienteDireccion"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    style="@style/Info"
                     android:text="Dirección" />
 
                 <TextView
                     android:id="@+id/tvDAConfClienteApellidos"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    style="@style/Info"
                     android:text="Apellidos" />
 
                 <TextView
                     android:id="@+id/tvDAConfClienteFecha"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    style="@style/Info"
                     android:text="Fecha" />
 
                 <TextView
                     android:id="@+id/tvDAConfClienteLugar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    style="@style/Info"
                     android:text="Lugar" />
 
                 <TextView
                     android:id="@+id/tvDAConfClienteUsuario"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    style="@style/Info"
                     android:text="Usuario" />
 
                 <TextView
                     android:id="@+id/tvDAConfClienteNombre"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    style="@style/Info"
                     android:text="Nombre" />
             </LinearLayout>
         </ScrollView>
@@ -81,6 +104,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:background="@color/LightGrey"
+                    android:drawableLeft="@drawable/ico_btn_modificar"
+                    android:onClick="ClickDAClientesModificar"
                     android:text="Modificar" />
 
                 <Button
@@ -88,15 +114,24 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:background="@color/IndianRed"
+                    android:drawableRight="@drawable/ico_btn_cancelar"
+                    android:textColor="@color/Blanco"
+                    android:onClick="ClickDAClientesCancelar"
                     android:text="Cancelar" />
             </LinearLayout>
 
             <Button
-                android:id="@+id/btnNext4"
+                android:id="@+id/btnDAClientesConfirmar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:onClick="ClickLogin3"
-                android:text="Volver al Login" />
+                android:textAlignment="textEnd"
+                android:drawablePadding="@dimen/d10"
+                android:paddingRight="@dimen/d5"
+                android:background="@color/VerdeBase2"
+                android:drawableRight="@drawable/ico_btn_confirmacion"
+                android:onClick="ClickDAClientesConfirmar"
+                android:text="Confimar" />
         </LinearLayout>
     </RelativeLayout>
 
