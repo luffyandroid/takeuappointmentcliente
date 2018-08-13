@@ -60,9 +60,13 @@ public class BBMenuClienteActivity extends AppCompatActivity {
 
     private void datosEmpresa(){
         listaEmpresas.add (new ZProfesional("usuario","contraseña","nombre","empresa","descripcion","lugar","direccion",R.drawable.uj,"p1","p2","p3","p4","p5","p6","p7","p8","p9","p10"));
-        listaEmpresas.add (new ZProfesional("usuario1","contraseña1","nombre1","empresa1","descripcion1","lugar","direccion1",R.drawable.bc,"p1","p2","p3","p4","p5","p6","p7","p8","p9","p10"));
-        listaEmpresas.add (new ZProfesional("usuario2","contraseña2","nombre2","empresa2","descripcion2","lugar","direccion2",R.drawable.cb,"p1","p2","p3","p4","p5","p6","p7","p8","p9","p10"));
-        listaEmpresas.add (new ZProfesional("usuario3","contraseña3","nombre3","empresa3","descripcion3","lugar","direccion3",R.drawable.cc,"p1","p2","p3","p4","p5","p6","p7","p8","p9","p10"));
+        listaEmpresas.add (new ZProfesional("Ricardo Corazón de León y Piel Roja de la Gaita","contraseña1","nombre1","Empresa de Harlekines S.A.Company Queen","Empresa de Halloween que abre en Enero, una locura xD","lugar","Calle Falsa 123456789",R.drawable.bc,"p1","p2","p3","p4","p5","p6","p7","p8","p9","p10"));
+        listaEmpresas.add (new ZProfesional("Ricardo Corazón de León y Piel Roja de la Gaita","contraseña1","nombre1","Empresa de Harlekines S.A.Company Queen","Empresa de Halloween que abre en Enero, una locura xD","lugar","Calle Falsa 123456789",R.drawable.bc_grande,"p1","p2","p3","p4","p5","p6","p7","p8","p9","p10"));
+        listaEmpresas.add (new ZProfesional("Ricardo Corazón de León y Piel Roja de la Gaita","contraseña1","nombre1","Empresa de Harlekines S.A.Company Queen (la novia del Joker)","Empresa de Halloween que abre en Enero, una locura xD que sale en la serie de Boujack Hourman","lugar","Calle Falsa 123456789, que más o menos cogido de los Simpsons",R.drawable.bc_grande,"p1","p2","p3","p4","p5","p6","p7","p8","p9","p10"));
+        listaEmpresas.add (new ZProfesional("Ricardo Corazón de León y Piel Roja de la Gaita","contraseña1","nombre1","Empresa de Harlekine","Empresa de Halloween que abre en Eneroç","lugar","Calle Falsa",R.drawable.bc_grande,"p1","p2","p3","p4","p5","p6","p7","p8","p9","p10"));
+        listaEmpresas.add (new ZProfesional("Ricardo Corazón de León y Piel Roja de la Gaita","contraseña1","nombre1","Empresa de Harlekines S.A.Company Queen","Empresa de Halloween que abre en Enero, una locura xD","lugar","Calle Falsa 123456789",R.drawable.bc_peque,"p1","p2","p3","p4","p5","p6","p7","p8","p9","p10"));
+        listaEmpresas.add (new ZProfesional("usuario2","contraseña2","nombre2","ZAPATOS ZP","Zapatería","lugar","C/ Bajo duero 2",R.drawable.cb,"p1","p2","p3","p4","p5","p6","p7","p8","p9","p10"));
+        listaEmpresas.add (new ZProfesional("usuario3","contraseña3","nombre3","ZAPATOS ZP","Zapatería","lugar","Jerez",R.drawable.cc,"p1","p2","p3","p4","p5","p6","p7","p8","p9","p10"));
         listaEmpresas.add (new ZProfesional("usuario4","contraseña4","nombre4","empresa4","descripcion4","lugar","direccion4",R.drawable.hr,"p1","p2","p3","p4","p5","p6","p7","p8","p9","p10"));
     }
 

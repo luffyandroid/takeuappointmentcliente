@@ -7,14 +7,16 @@
 
 
     <color name="NegroBase">#212121</color>
-    <color name="VerdeBase">#00ad98</color>
+    <color name="VerdeBase">#008e7d</color>
     <color name="VerdeBase2">#41d1c3</color>
-    <color name="VerdeBase3">#81fff3</color>
+    <color name="VerdeBase3">#9bfff6</color>
     <color name="Blanco">#ffffff</color>
     <color name="AzulFacebook">#3c66c4</color>
+    <color name="AzulFacebookPress">#001aff</color>
     <color name="RojoGoogle">#cf4332</color>
     <color name="RojoGooglePres">#a21200</color>
     <color name="AzulTwitter">#4ab3f4</color>
+    <color name="AzulTwitterPress">#007bff</color>
 
 
 
