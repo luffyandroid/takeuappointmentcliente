@@ -30,7 +30,7 @@
         <item name="android:background">@color/LightGrey</item>
         <item name="android:layout_margin">@dimen/d5</item>
     </style>
-
+ <!--Comentario chorra-->
 
 
 </resources>
