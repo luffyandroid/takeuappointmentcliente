@@ -5,9 +5,10 @@ import android.os.Parcelable;
 
 public class ZProfesional implements Parcelable{
 
-    String pusuario;
+    String pdni;
     String pcontrasena;
     String pnombre;
+    String papellidos;
     String pempresa;
     String pdescripcion;
     String plugar;
@@ -22,7 +23,6 @@ public class ZProfesional implements Parcelable{
     String p7;
     String p8;
     String p9;
-    String p10;
 
     public static final Parcelable.Creator<ZProfesional> CREATOR = new
             Parcelable.Creator<ZProfesional>(){
@@ -36,13 +36,14 @@ public class ZProfesional implements Parcelable{
 
             };
 
-    public ZProfesional(String pusuario, String pcontrasena, String pnombre, String pempresa, String pdescripcion,
+    public ZProfesional(String pdni, String pcontrasena, String pnombre,
+                        String papellidos, String pempresa, String pdescripcion,
                         String plugar, String pdireccion, int pimagen, String p1, String p2,
-                        String p3, String p4, String p5, String p6, String p7, String p8, String p9,
-                        String p10) {
-        this.pusuario = pusuario;
+                        String p3, String p4, String p5, String p6, String p7, String p8, String p9) {
+        this.pdni = pdni;
         this.pcontrasena = pcontrasena;
         this.pnombre = pnombre;
+        this.papellidos = papellidos;
         this.pempresa = pempresa;
         this.pdescripcion = pdescripcion;
         this.plugar = plugar;
@@ -57,19 +58,18 @@ public class ZProfesional implements Parcelable{
         this.p7 = p7;
         this.p8 = p8;
         this.p9 = p9;
-        this.p10 = p10;
     }
 
     public ZProfesional(Parcel p){
         readfromParcel(p);
     }
 
-    public String getPusuario() {
-        return pusuario;
+    public String getPdni() {
+        return pdni;
     }
 
-    public void setPusuario(String pusuario) {
-        this.pusuario = pusuario;
+    public void setPdni(String pdni) {
+        this.pdni = pdni;
     }
 
     public String getPcontrasena() {
@@ -86,6 +86,14 @@ public class ZProfesional implements Parcelable{
 
     public void setPnombre(String pnombre) {
         this.pnombre = pnombre;
+    }
+
+    public String getPapellidos() {
+        return papellidos;
+    }
+
+    public void setPapellidos(String papellidos) {
+        this.papellidos = papellidos;
     }
 
     public String getPempresa() {
@@ -200,14 +208,6 @@ public class ZProfesional implements Parcelable{
         this.p9 = p9;
     }
 
-    public String getP10() {
-        return p10;
-    }
-
-    public void setP10(String p10) {
-        this.p10 = p10;
-    }
-
     @Override
     public int describeContents() {
         return 0;
@@ -215,9 +215,10 @@ public class ZProfesional implements Parcelable{
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(this.pusuario);
+        dest.writeString(this.pdni);
         dest.writeString(this.pcontrasena);
         dest.writeString(this.pnombre);
+        dest.writeString(this.papellidos);
         dest.writeString(this.pempresa);
         dest.writeString(this.pdescripcion);
         dest.writeString(this.plugar);
@@ -231,14 +232,14 @@ public class ZProfesional implements Parcelable{
         dest.writeString(this.p7);
         dest.writeString(this.p8);
         dest.writeString(this.p9);
-        dest.writeString(this.p10);
         dest.writeInt(this.pimagen);
 
     }
     private void readfromParcel(Parcel p){
-        this.pusuario = p.readString();
+        this.pdni = p.readString();
         this.pcontrasena = p.readString();
         this.pnombre = p.readString();
+        this.papellidos = p.readString();
         this.pempresa = p.readString();
         this.pdescripcion = p.readString();
         this.plugar = p.readString();
@@ -253,7 +254,6 @@ public class ZProfesional implements Parcelable{
         this.p7 = p.readString();
         this.p8 = p.readString();
         this.p9 = p.readString();
-        this.p10 = p.readString();
         this.pimagen = p.readInt();
     }
 }

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".CCRegistroClienteActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/d50"
+        android:background="@color/VerdeBase"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvCCRegistroClienteCabecera"
+            style="@style/Cabecera"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="• REGISTRO •"
+            android:textAlignment="center" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/etCCRegistroDNI"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:hint="DNI" />
+
+                <EditText
+                    android:id="@+id/etCCRegistroContrasena"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPassword"
+                    android:hint="Contraseña"/>
+
+                <EditText
+                    android:id="@+id/etCCRegistroNombre"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:hint="Nombre" />
+
+                <EditText
+                    android:id="@+id/etCCRegistroApellidos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:hint="Apellidos" />
+
+                <EditText
+                    android:id="@+id/etCCRegistroEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textEmailAddress"
+                    android:hint="Email"/>
+
+                <EditText
+                    android:id="@+id/etCCRegistroTelefono"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="phone"
+                    android:hint="Teléfono"/>
+
+                <EditText
+                    android:id="@+id/etCCRegistroCiudad"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:hint="Ciudad" />
+
+                <EditText
+                    android:id="@+id/etCCRegistroDireccion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:hint="Dirección" />
+
+                <Button
+                    android:id="@+id/btnCCRegistrarRegistrar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Registrar cliente" />
+            </LinearLayout>
+        </ScrollView>
+
+    </RelativeLayout>
+
+
+</LinearLayout>

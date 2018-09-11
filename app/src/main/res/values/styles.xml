@@ -10,7 +10,7 @@
 
     <!-- Texto cabeceras -->
     <style name="Cabecera">
-        <item name="android:fontFamily">@font/coolvetica</item>
+        <!--<item name="android:fontFamily">@font/coolvetica</item>-->
         <item name="android:textColor">@color/NegroBase</item>
         <item name="android:textSize">@dimen/d18</item>
         <item name="android:padding">@dimen/d10</item>

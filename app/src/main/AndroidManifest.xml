@@ -23,7 +23,8 @@
         <activity android:name=".CBClienteActivity" />
         <activity android:name=".DAConfirmacionClienteActivity" />
         <activity android:name=".DAConfirmacionProfesionalesActivity" />
-        <activity android:name=".AASplashActivity"></activity>
+        <activity android:name=".AASplashActivity" />
+        <activity android:name=".CCRegistroClienteActivity"></activity>
     </application>
 
 </manifest>

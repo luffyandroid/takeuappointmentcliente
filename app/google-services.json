@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "794112774609",
+    "firebase_url": "https://takeuappointment.firebaseio.com",
+    "project_id": "takeuappointment",
+    "storage_bucket": "takeuappointment.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:794112774609:android:5dff02cc9ac7a4f0",
+        "android_client_info": {
+          "package_name": "com.example.lute.takeuappointment"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "794112774609-e0adiaho78g3h4o2o2regas6ma0kniou.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.lute.takeuappointment",
+            "certificate_hash": "09f78eb2fdb8dc983406c710689b66edcc6b87ec"
+          }
+        },
+        {
+          "client_id": "794112774609-3rmail09enntg505cllo06alm76001r3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyByHezNGt331AB3S19C4w5g1qXOkL0BbDE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "794112774609-3rmail09enntg505cllo06alm76001r3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

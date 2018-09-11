@@ -5,12 +5,16 @@ import android.os.Parcelable;
 
 public class ZCliente implements Parcelable{
 
-    String cusuario;
+    String cdni;
     String ccontrasena;
     String cnombre;
+    String capellidos;
+    String cemail;
+    String ctelefono;
     String cfecha;
     String chora;
     String clugar;
+    String cciudad;
     String cdireccion;
     String cprofesional;
     String c1;
@@ -19,10 +23,6 @@ public class ZCliente implements Parcelable{
     String c4;
     String c5;
     String c6;
-    String c7;
-    String c8;
-    String c9;
-    String c10;
     int cimagen;
 
     public static final Parcelable.Creator<ZCliente> CREATOR = new
@@ -40,16 +40,20 @@ public class ZCliente implements Parcelable{
     //public ZCliente(){}
 
 
-    public ZCliente(String cusuario, String ccontrasena, String cnombre,
-                    String cfecha, String chora, String clugar, String cdireccion,
+    public ZCliente(String cdni, String ccontrasena, String cnombre, String capellidos, String cemail, String ctelefono,
+                    String cfecha, String chora, String clugar, String cciudad, String cdireccion,
                     String cprofesional, String c1, String c2, String c3, String c4, String c5,
-                    String c6, String c7, String c8, String c9, String c10, int cimagen) {
-        this.cusuario = cusuario;
+                    String c6, int cimagen) {
+        this.cdni = cdni;
         this.ccontrasena = ccontrasena;
         this.cnombre = cnombre;
+        this.capellidos = capellidos;
+        this.cemail = cemail;
+        this.ctelefono = ctelefono;
         this.cfecha = cfecha;
         this.chora = chora;
         this.clugar = clugar;
+        this.cciudad = cciudad;
         this.cdireccion = cdireccion;
         this.cprofesional = cprofesional;
         this.c1 = c1;
@@ -58,10 +62,6 @@ public class ZCliente implements Parcelable{
         this.c4 = c4;
         this.c5 = c5;
         this.c6 = c6;
-        this.c7 = c7;
-        this.c8 = c8;
-        this.c9 = c9;
-        this.c10 = c10;
         this.cimagen = cimagen;
     }
 
@@ -70,12 +70,12 @@ public class ZCliente implements Parcelable{
     }
 
 
-    public String getCusuario() {
-        return cusuario;
+    public String getCdni() {
+        return cdni;
     }
 
-    public void setCusuario(String cusuario) {
-        this.cusuario = cusuario;
+    public void setCdni(String cdni) {
+        this.cdni = cdni;
     }
 
     public String getCcontrasena() {
@@ -92,6 +92,30 @@ public class ZCliente implements Parcelable{
 
     public void setCnombre(String cnombre) {
         this.cnombre = cnombre;
+    }
+
+    public String getCapellidos() {
+        return capellidos;
+    }
+
+    public void setCapellidos(String capellidos) {
+        this.capellidos = capellidos;
+    }
+
+    public String getCemail() {
+        return cemail;
+    }
+
+    public void setCemail(String cemail) {
+        this.cemail = cemail;
+    }
+
+    public String getCtelefono() {
+        return ctelefono;
+    }
+
+    public void setCtelefono(String ctelefono) {
+        this.ctelefono = ctelefono;
     }
 
     public String getCfecha() {
@@ -116,6 +140,14 @@ public class ZCliente implements Parcelable{
 
     public void setClugar(String clugar) {
         this.clugar = clugar;
+    }
+
+    public String getCciudad() {
+        return cciudad;
+    }
+
+    public void setCciudad(String cciudad) {
+        this.cciudad = cciudad;
     }
 
     public String getCdireccion() {
@@ -182,38 +214,6 @@ public class ZCliente implements Parcelable{
         this.c6 = c6;
     }
 
-    public String getC7() {
-        return c7;
-    }
-
-    public void setC7(String c7) {
-        this.c7 = c7;
-    }
-
-    public String getC8() {
-        return c8;
-    }
-
-    public void setC8(String c8) {
-        this.c8 = c8;
-    }
-
-    public String getC9() {
-        return c9;
-    }
-
-    public void setC9(String c9) {
-        this.c9 = c9;
-    }
-
-    public String getC10() {
-        return c10;
-    }
-
-    public void setC10(String c10) {
-        this.c10 = c10;
-    }
-
     public int getCimagen() {
         return cimagen;
     }
@@ -230,12 +230,16 @@ public class ZCliente implements Parcelable{
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(this.cusuario);
+        dest.writeString(this.cdni);
         dest.writeString(this.ccontrasena);
         dest.writeString(this.cnombre);
+        dest.writeString(this.capellidos);
+        dest.writeString(this.cemail);
+        dest.writeString(this.ctelefono);
         dest.writeString(this.cfecha);
         dest.writeString(this.chora);
         dest.writeString(this.clugar);
+        dest.writeString(this.cciudad);
         dest.writeString(this.cdireccion);
         dest.writeString(this.cprofesional);
         dest.writeString(this.c1);
@@ -244,22 +248,21 @@ public class ZCliente implements Parcelable{
         dest.writeString(this.c4);
         dest.writeString(this.c5);
         dest.writeString(this.c6);
-        dest.writeString(this.c7);
-        dest.writeString(this.c8);
-        dest.writeString(this.c9);
-        dest.writeString(this.c10);
         dest.writeInt(this.cimagen);
 
     }
 
     private void readfromParcel(Parcel p){
-        this.cusuario = p.readString();
+        this.cdni = p.readString();
         this.ccontrasena = p.readString();
         this.cnombre = p.readString();
+        this.capellidos = p.readString();
+        this.cemail = p.readString();
+        this.ctelefono = p.readString();
         this.cfecha = p.readString();
         this.chora = p.readString();
         this.clugar = p.readString();
-        this.clugar = p.readString();
+        this.cciudad = p.readString();
         this.cdireccion = p.readString();
         this.cprofesional = p.readString();
         this.c1 = p.readString();
@@ -268,10 +271,6 @@ public class ZCliente implements Parcelable{
         this.c4 = p.readString();
         this.c5 = p.readString();
         this.c6 = p.readString();
-        this.c7 = p.readString();
-        this.c8 = p.readString();
-        this.c9 = p.readString();
-        this.c10 = p.readString();
         this.cimagen = p.readInt();
     }
 }
