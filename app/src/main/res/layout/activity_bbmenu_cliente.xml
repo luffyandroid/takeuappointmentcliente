@@ -18,7 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/Cabecera"
-            android:text="• CITAS PROGRAMADAS •"
+            android:text="• LISTA DE EMPRESAS •"
             android:textAlignment="center" />
 
     </LinearLayout>
