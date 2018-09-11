@@ -36,6 +36,12 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
+                <Switch
+                    android:id="@+id/swchCCRegistroCambio"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Cambiar si se registra a un profesional" />
+
                 <EditText
                     android:id="@+id/etCCRegistroDNI"
                     android:layout_width="match_parent"
@@ -51,6 +57,14 @@
                     android:ems="10"
                     android:inputType="textPassword"
                     android:hint="Contraseña"/>
+
+                <EditText
+                    android:id="@+id/etCCRegistroContrasena2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPassword"
+                    android:hint="Repite contraseña"/>
 
                 <EditText
                     android:id="@+id/etCCRegistroNombre"
@@ -74,7 +88,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:inputType="textEmailAddress"
-                    android:hint="Email"/>
+                    android:hint="Email/Empresa"/>
 
                 <EditText
                     android:id="@+id/etCCRegistroTelefono"
@@ -82,7 +96,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:inputType="phone"
-                    android:hint="Teléfono"/>
+                    android:hint="Teléfono/Descripcion"/>
 
                 <EditText
                     android:id="@+id/etCCRegistroCiudad"
@@ -90,7 +104,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:inputType="textPersonName"
-                    android:hint="Ciudad" />
+                    android:hint="Ciudad/Lugar" />
 
                 <EditText
                     android:id="@+id/etCCRegistroDireccion"
@@ -104,7 +118,8 @@
                     android:id="@+id/btnCCRegistrarRegistrar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Registrar cliente" />
+                    android:text="Registrar cliente"
+                    android:onClick="clickRegistrar"/>
             </LinearLayout>
         </ScrollView>
 
