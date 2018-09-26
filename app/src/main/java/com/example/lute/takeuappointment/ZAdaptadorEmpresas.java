@@ -36,7 +36,7 @@ public class ZAdaptadorEmpresas extends  RecyclerView.Adapter<ZAdaptadorEmpresas
         holder.empresa.setText(listaEmpresas.get(position).getPempresa());
         holder.direccion.setText(listaEmpresas.get(position).getPdireccion());
         //holder.datos.setText(listaClientes.get(position).getP1());
-        holder.imagen.setImageResource(listaEmpresas.get(position).getPimagen());
+        //holder.imagen.setImageResource(listaEmpresas.get(position).getPimagen());
 
     }
 

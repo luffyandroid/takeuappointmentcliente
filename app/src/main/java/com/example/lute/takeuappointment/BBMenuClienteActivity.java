@@ -14,7 +14,11 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
@@ -24,7 +28,13 @@ public class BBMenuClienteActivity extends AppCompatActivity {
     ImageView foto;
     ArrayList<ZProfesional> listaEmpresas;
     RecyclerView recyclerEmpresas;
+    static final String EXTRA_USUARIO="USUARIO";
+    TextView tvBBMenuClienteUsuario;
 
+    DatabaseReference dbRef;
+    ValueEventListener valueEventListener;
+
+    ZCliente usu=null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -36,6 +46,16 @@ public class BBMenuClienteActivity extends AppCompatActivity {
             Toast.makeText(getBaseContext(),
                     "Comprueba tu conexión a Internet", Toast.LENGTH_LONG)
                     .show();
+        }
+
+        tvBBMenuClienteUsuario = (TextView)findViewById(R.id.tvBBMenuClienteUsuario);
+
+        Bundle b= getIntent().getExtras();
+
+        if (b!=null){
+
+            usu = b.getParcelable(BALoginActivity.EXTRA_USUARIO);
+            tvBBMenuClienteUsuario.setText(usu.getCnombre());
         }
         
         //RELACIONO ETIQUETAS CON ELEMENTOS LAYOUT
@@ -79,7 +99,7 @@ public class BBMenuClienteActivity extends AppCompatActivity {
         listaEmpresas.add (new ZProfesional("usuario2","contraseña2","nombre2","ZAPATOS ZP","Zapatería","lugar","C/ Bajo duero 2",R.drawable.cb,"p1","p2","p3","p4","p5","p6","p7","p8","p9","p10"));
         listaEmpresas.add (new ZProfesional("usuario3","contraseña3","nombre3","ZAPATOS ZP","Zapatería","lugar","Jerez",R.drawable.cc,"p1","p2","p3","p4","p5","p6","p7","p8","p9","p10"));
         listaEmpresas.add (new ZProfesional("usuario4","contraseña4","nombre4","empresa4","descripcion4","lugar","direccion4",R.drawable.hr,"p1","p2","p3","p4","p5","p6","p7","p8","p9","p10"));
-        */listaEmpresas.add (new ZProfesional("123456789P","qwerty","pepe","garcia","empresadepruebaSA","empresa para hacer pruebas","sucursal1","calle falsa 123",R.drawable.uj,"p1","p2","p3","p4","p5","p6","p7","p8","p9"));
+        */listaEmpresas.add (new ZProfesional("123456789P","qwerty","pepe","garcia","empresadepruebaSA","empresa para hacer pruebas","sucursal1","calle falsa 123","foto","p1","p2","p3","p4","p5","p6","p7","p8","p9"));
     }
 
     //COMPROBACIÓN CONEXIÓN INTERNET

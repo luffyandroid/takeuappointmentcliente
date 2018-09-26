@@ -4,8 +4,10 @@
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <!--<uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera"
+                   android:required="true"/>-->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-
 
     <application
         android:allowBackup="true"
@@ -14,27 +16,38 @@
         android:roundIcon="@drawable/logo_agenda_splash"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CCRegistroClienteActivity">
+        <activity android:name=".BALoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".BALoginActivity"
+        <activity
+            android:name=".AASplashActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".CAProfesionalesActivity"
+        <activity
+            android:name=".CAProfesionalesActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".CBClienteActivity"
+        <activity
+            android:name=".CBClienteActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".AASplashActivity"
+        <activity
+            android:name=".CCRegistroClienteActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".DAConfirmacionClienteActivity"
+        <activity
+            android:name=".DAConfirmacionClienteActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".DAConfirmacionProfesionalesActivity"
+        <activity
+            android:name=".DAConfirmacionProfesionalesActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".BBMenuClienteActivity"
-            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".BBMenuClienteActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".pruebaFoto"
+                  android:screenOrientation="portrait">
+
+        </activity>
     </application>
 
 </manifest>

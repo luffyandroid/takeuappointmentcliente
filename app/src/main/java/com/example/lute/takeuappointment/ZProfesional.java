@@ -13,7 +13,7 @@ public class ZProfesional implements Parcelable{
     String pdescripcion;
     String plugar;
     String pdireccion;
-    int pimagen;
+    String pimagen;
     String p1;
     String p2;
     String p3;
@@ -38,7 +38,7 @@ public class ZProfesional implements Parcelable{
 
     public ZProfesional(String pdni, String pcontrasena, String pnombre,
                         String papellidos, String pempresa, String pdescripcion,
-                        String plugar, String pdireccion, int pimagen, String p1, String p2,
+                        String plugar, String pdireccion, String pimagen, String p1, String p2,
                         String p3, String p4, String p5, String p6, String p7, String p8, String p9) {
         this.pdni = pdni;
         this.pcontrasena = pcontrasena;
@@ -128,11 +128,11 @@ public class ZProfesional implements Parcelable{
         this.pdireccion = pdireccion;
     }
 
-    public int getPimagen() {
+    public String getPimagen() {
         return pimagen;
     }
 
-    public void setPimagen(int pimagen) {
+    public void setPimagen(String pimagen) {
         this.pimagen = pimagen;
     }
 
@@ -232,7 +232,7 @@ public class ZProfesional implements Parcelable{
         dest.writeString(this.p7);
         dest.writeString(this.p8);
         dest.writeString(this.p9);
-        dest.writeInt(this.pimagen);
+        dest.writeString(this.pimagen);
 
     }
     private void readfromParcel(Parcel p){
@@ -254,6 +254,6 @@ public class ZProfesional implements Parcelable{
         this.p7 = p.readString();
         this.p8 = p.readString();
         this.p9 = p.readString();
-        this.pimagen = p.readInt();
+        this.pimagen = p.readString();
     }
 }

@@ -21,6 +21,13 @@
             android:text="• REGISTRO •"
             android:textAlignment="center" />
 
+        <TextView
+            android:id="@+id/tvCCRegistroFoto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:visibility="gone"/>
+
     </LinearLayout>
 
     <RelativeLayout
@@ -88,7 +95,8 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:inputType="textEmailAddress"
-                    android:hint="Email/Empresa"/>
+                    android:hint="Email"
+                    android:visibility="visible"/>
 
                 <EditText
                     android:id="@+id/etCCRegistroTelefono"
@@ -96,7 +104,8 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:inputType="phone"
-                    android:hint="Teléfono/Descripcion"/>
+                    android:hint="Teléfono"
+                    android:visibility="visible"/>
 
                 <EditText
                     android:id="@+id/etCCRegistroCiudad"
@@ -104,7 +113,35 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:inputType="textPersonName"
-                    android:hint="Ciudad/Lugar" />
+                    android:hint="Ciudad"
+                    android:visibility="visible"/>
+
+                <EditText
+                    android:id="@+id/etCCRegistroEmpresa"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:hint="Empresa"
+                    android:visibility="gone"/>
+
+                <EditText
+                    android:id="@+id/etCCRegistroDescripcion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:hint="Descripcion"
+                    android:visibility="gone"/>
+
+                <EditText
+                    android:id="@+id/etCCRegistroLugar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:hint="Lugar"
+                    android:visibility="gone"/>
 
                 <EditText
                     android:id="@+id/etCCRegistroDireccion"
@@ -113,6 +150,13 @@
                     android:ems="10"
                     android:inputType="textPersonName"
                     android:hint="Dirección" />
+
+                <ImageView
+                    android:id="@+id/ivCCRegistroFoto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_camera"
+                    android:onClick="ClickImagenRegistro"/>
 
                 <Button
                     android:id="@+id/btnCCRegistrarRegistrar"

@@ -13,6 +13,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -20,8 +21,8 @@ import java.util.ArrayList;
 public class CAProfesionalesActivity extends AppCompatActivity {
 
     ImageView foto;
-    ArrayList<ZCliente> listaClientes;
-    RecyclerView recyclerClientes;
+    ArrayList<ZCliente> listaClientes = new ArrayList<ZCliente>();
+    ListView listCAProfesionales;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,17 +36,13 @@ public class CAProfesionalesActivity extends AppCompatActivity {
                     .show();
         }
 
-        foto=(ImageView)findViewById(R.id.ivItemProfImagen);
+
 
         //MOSTRAR LISTA DE CLIENTES
-        listaClientes = new ArrayList<>();
-        recyclerClientes = (RecyclerView) findViewById(R.id.listCAProfesionales);
-        recyclerClientes.setLayoutManager(new LinearLayoutManager(this));
-
         datosClientes();
 
-        ZAdaptadorProfesionales adapter  = new ZAdaptadorProfesionales(listaClientes);
-        recyclerClientes.setAdapter(adapter);
+        listCAProfesionales = (ListView)findViewById(R.id.listCAProfesionales);
+
     }
 
     //BOTON PROVISIONAL
@@ -75,14 +72,14 @@ public class CAProfesionalesActivity extends AppCompatActivity {
     }
 
     private void datosClientes(){
-        listaClientes.add(new ZCliente("","","Melania Gallego de los Santos","","17:30","","","","","","","","","","","","","",R.drawable.imagen_no_disponible));
-        listaClientes.add(new ZCliente("","","","","","","","","","","","","","","","","","",R.drawable.bc));
-        listaClientes.add(new ZCliente("","","","","","","","","","","","","","","","","","",R.drawable.cb));
-        listaClientes.add(new ZCliente("","","","","","","","","","","","","","","","","","",R.drawable.cc));
-        listaClientes.add(new ZCliente("","","","","","","","","","","","","","","","","","",R.drawable.gew));
-        listaClientes.add(new ZCliente("","","","","","","","","","","","","","","","","","",R.drawable.hr));
-        listaClientes.add(new ZCliente("","","","","","","","","","","","","","","","","","",R.drawable.lal));
-        listaClientes.add(new ZCliente("","","","","","","","","","","","","","","","","","",R.drawable.uj));
+        listaClientes.add(new ZCliente("","","Melania Gallego de los Santos","","17:30","","","","","","","","","","","","","","foto1"));
+        listaClientes.add(new ZCliente("","","","","","","","","","","","","","","","","","","foto2"));
+        listaClientes.add(new ZCliente("","","","","","","","","","","","","","","","","","","foto3"));
+        listaClientes.add(new ZCliente("","","","","","","","","","","","","","","","","","","foto4"));
+        listaClientes.add(new ZCliente("","","","","","","","","","","","","","","","","","","foto5"));
+        listaClientes.add(new ZCliente("","","","","","","","","","","","","","","","","","","foto6"));
+        listaClientes.add(new ZCliente("","","","","","","","","","","","","","","","","","","foto7"));
+        listaClientes.add(new ZCliente("","","","","","","","","","","","","","","","","","","foto8"));
     }
 
     //COMPROBACIÓN CONEXIÓN INTERNET

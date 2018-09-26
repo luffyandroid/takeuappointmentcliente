@@ -26,7 +26,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:visibility="gone">
+        >
+
+        <Switch
+            android:id="@+id/swBALogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cliente" />
+
+        <Spinner
+            android:id="@+id/spBALogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
 
         <EditText
             android:id="@+id/etBALoginDNI"
@@ -47,6 +59,7 @@
             android:id="@+id/btnBALoginAcceder"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="clickInicio"
             android:text="ACCEDE" />
 
         <Button
@@ -60,7 +73,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:gravity="center">
+        android:gravity="center"
+        android:visibility="gone">
 
         <Button
             android:id="@+id/btnBALoginFacebook"
@@ -102,7 +116,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="150dp"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:visibility="gone">
 
         <Button
             android:id="@+id/btnNext1"

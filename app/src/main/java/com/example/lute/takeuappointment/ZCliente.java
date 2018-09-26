@@ -23,7 +23,7 @@ public class ZCliente implements Parcelable{
     String c4;
     String c5;
     String c6;
-    int cimagen;
+    String cimagen;
 
     public static final Parcelable.Creator<ZCliente> CREATOR = new
             Parcelable.Creator<ZCliente>(){
@@ -43,7 +43,7 @@ public class ZCliente implements Parcelable{
     public ZCliente(String cdni, String ccontrasena, String cnombre, String capellidos, String cemail, String ctelefono,
                     String cfecha, String chora, String clugar, String cciudad, String cdireccion,
                     String cprofesional, String c1, String c2, String c3, String c4, String c5,
-                    String c6, int cimagen) {
+                    String c6, String cimagen) {
         this.cdni = cdni;
         this.ccontrasena = ccontrasena;
         this.cnombre = cnombre;
@@ -214,11 +214,11 @@ public class ZCliente implements Parcelable{
         this.c6 = c6;
     }
 
-    public int getCimagen() {
+    public String getCimagen() {
         return cimagen;
     }
 
-    public void setCimagen(int cimagen) {
+    public void setCimagen(String cimagen) {
         this.cimagen = cimagen;
     }
 
@@ -248,7 +248,7 @@ public class ZCliente implements Parcelable{
         dest.writeString(this.c4);
         dest.writeString(this.c5);
         dest.writeString(this.c6);
-        dest.writeInt(this.cimagen);
+        dest.writeString(this.cimagen);
 
     }
 
@@ -271,6 +271,6 @@ public class ZCliente implements Parcelable{
         this.c4 = p.readString();
         this.c5 = p.readString();
         this.c6 = p.readString();
-        this.cimagen = p.readInt();
+        this.cimagen = p.readString();
     }
 }

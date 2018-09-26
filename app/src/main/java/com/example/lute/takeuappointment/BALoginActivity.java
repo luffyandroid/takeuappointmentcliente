@@ -6,14 +6,31 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.SpinnerAdapter;
+import android.widget.Switch;
 import android.widget.Toast;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class BALoginActivity extends AppCompatActivity {
 
     //DECLARO ELEMENTOS LAYOUT
     EditText etBALoginDNI, etBALoginPassword;
+    Spinner spBALogin;
+    Switch swBALogin;
+    DatabaseReference dbRef;
+    ValueEventListener valueEventListener;
+    static final String EXTRA_USUARIO = "USUARIO";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +47,21 @@ public class BALoginActivity extends AppCompatActivity {
         //ENLAZO ELEMENTOS LAYOUT
         etBALoginDNI = (EditText) findViewById(R.id.etBALoginDNI);
         etBALoginPassword = (EditText) findViewById(R.id.etBALoginPassword);
+        spBALogin = (Spinner)findViewById(R.id.spBALogin);
+        swBALogin = (Switch)findViewById(R.id.swBALogin);
+        swBALogin.setChecked(false);
+        swBALogin.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked){
+                    swBALogin.setText("Login profesional");
+                }else{
+                    swBALogin.setText("Login cliente");
+                }
+            }
+        });
+        String[] empresas = {"prueba", "prueba empresa guay", "pruebetic"};
+        spBALogin.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, empresas));
     }
 
     //BOTONES PROVISIONALES
@@ -76,4 +108,58 @@ public class BALoginActivity extends AppCompatActivity {
         return bConectado;
 
     }
+
+    public void clickInicio(View view) {
+
+        String usuario = etBALoginDNI.getText().toString();
+        final String contrasena = etBALoginPassword.getText().toString();
+        final String empresaElegida = spBALogin.getSelectedItem().toString();
+        /*if (swBALogin.isChecked()) {
+            dbRef = FirebaseDatabase.getInstance().getReference().child(empresaElegida + "/profesionales/" + usuario);
+            Toast.makeText(getApplicationContext(), "Elige profesional", Toast.LENGTH_SHORT).show();
+        }else{*/
+            dbRef = FirebaseDatabase.getInstance().getReference().child(empresaElegida + "/clientes/" + usuario);
+            Toast.makeText(getApplicationContext(), "Elige cliente", Toast.LENGTH_SHORT).show();
+        //}
+
+        valueEventListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                if (dataSnapshot.getValue() == null) {
+                    // tvFalloLogin.setText("El usuario no existe");
+                    Toast.makeText(getApplicationContext(), "Usuario incorrecto", Toast.LENGTH_SHORT).show();
+                } else {
+
+
+                    ZCliente usu = dataSnapshot.getValue(ZCliente.class);
+
+                    String contrasenadb = usu.getCcontrasena();
+
+                    if (!contrasena.equals(contrasenadb)) {
+                        // tvFalloLogin.setText("La contraseña no coincide");
+                        Toast.makeText(getApplicationContext(), "Password incorrecto", Toast.LENGTH_SHORT).show();
+                    } else {
+
+                        Intent mainIntent = new Intent().setClass(getApplicationContext(), BBMenuClienteActivity.class);
+                        mainIntent.putExtra(EXTRA_USUARIO, usu);
+                        startActivity(mainIntent);
+                        finish();
+
+                    }
+                }
+
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Log.e("LoginActivity", "DATABASE ERROR");
+            }
+        };
+        dbRef.addValueEventListener(valueEventListener);
+
+
+    }
+
 }
