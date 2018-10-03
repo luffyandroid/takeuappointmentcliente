@@ -11,13 +11,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
@@ -47,6 +51,7 @@ public class BBMenuClienteActivity extends AppCompatActivity {
                     "Comprueba tu conexión a Internet", Toast.LENGTH_LONG)
                     .show();
         }
+        cargarDatosFirebase();
 
         tvBBMenuClienteUsuario = (TextView)findViewById(R.id.tvBBMenuClienteUsuario);
 
@@ -62,14 +67,14 @@ public class BBMenuClienteActivity extends AppCompatActivity {
         foto=(ImageView)findViewById(R.id.ivItemMenuClienteImagen);
 
         //MOSTRAR LISTA DE CLIENTES
-        listaEmpresas = new ArrayList<>();
+        /*listaEmpresas = new ArrayList<>();
         recyclerEmpresas = (RecyclerView) findViewById(R.id.listBBMenuCliente);
         recyclerEmpresas.setLayoutManager(new LinearLayoutManager(this));
 
         datosEmpresa();
 
         ZAdaptadorEmpresas adapter  = new ZAdaptadorEmpresas(listaEmpresas);
-        recyclerEmpresas.setAdapter(adapter);
+        recyclerEmpresas.setAdapter(adapter);*/
 
 
     }
@@ -89,7 +94,7 @@ public class BBMenuClienteActivity extends AppCompatActivity {
         }
     }
 
-    private void datosEmpresa(){
+    /*private void datosEmpresa(){
         /*listaEmpresas.add (new ZProfesional("usuario","contraseña","nombre","empresa","descripcion","lugar","direccion",R.drawable.uj,"p1","p2","p3","p4","p5","p6","p7","p8","p9","p10"));
         listaEmpresas.add (new ZProfesional("Ricardo Corazón de León y Piel Roja de la Gaita","contraseña1","nombre1","Empresa de Harlekines S.A.Company Queen","Empresa de Halloween que abre en Enero, una locura xD","lugar","Calle Falsa 123456789",R.drawable.bc,"p1","p2","p3","p4","p5","p6","p7","p8","p9","p10"));
         listaEmpresas.add (new ZProfesional("Ricardo Corazón de León y Piel Roja de la Gaita","contraseña1","nombre1","Empresa de Harlekines S.A.Company Queen","Empresa de Halloween que abre en Enero, una locura xD","lugar","Calle Falsa 123456789",R.drawable.bc_grande,"p1","p2","p3","p4","p5","p6","p7","p8","p9","p10"));
@@ -99,8 +104,8 @@ public class BBMenuClienteActivity extends AppCompatActivity {
         listaEmpresas.add (new ZProfesional("usuario2","contraseña2","nombre2","ZAPATOS ZP","Zapatería","lugar","C/ Bajo duero 2",R.drawable.cb,"p1","p2","p3","p4","p5","p6","p7","p8","p9","p10"));
         listaEmpresas.add (new ZProfesional("usuario3","contraseña3","nombre3","ZAPATOS ZP","Zapatería","lugar","Jerez",R.drawable.cc,"p1","p2","p3","p4","p5","p6","p7","p8","p9","p10"));
         listaEmpresas.add (new ZProfesional("usuario4","contraseña4","nombre4","empresa4","descripcion4","lugar","direccion4",R.drawable.hr,"p1","p2","p3","p4","p5","p6","p7","p8","p9","p10"));
-        */listaEmpresas.add (new ZProfesional("123456789P","qwerty","pepe","garcia","empresadepruebaSA","empresa para hacer pruebas","sucursal1","calle falsa 123","foto","p1","p2","p3","p4","p5","p6","p7","p8","p9"));
-    }
+        *//*listaEmpresas.add (new ZProfesional("123456789P","qwerty","pepe","garcia","empresadepruebaSA","empresa para hacer pruebas","sucursal1","calle falsa 123","foto","p1","p2","p3","p4","p5","p6","p7","p8","p9"));*/
+    /*}*/
 
     //COMPROBACIÓN CONEXIÓN INTERNET
     public static boolean verificaConexion(Context ctx) {
@@ -119,4 +124,30 @@ public class BBMenuClienteActivity extends AppCompatActivity {
         return bConectado;
 
     }
+
+    private void cargarDatosFirebase(){
+
+
+        dbRef = FirebaseDatabase.getInstance().getReference().child("receta");
+
+
+        valueEventListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                //listaRecetas.clear();
+                for (DataSnapshot recetaDataSnapshot : dataSnapshot.getChildren()) {
+                    //cargarListView(recetaDataSnapshot);
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Log.e("MisRecetasActivity", "DATABASE ERROR");
+            }
+        };
+
+        dbRef.addValueEventListener(valueEventListener);
+
+    }
+
 }

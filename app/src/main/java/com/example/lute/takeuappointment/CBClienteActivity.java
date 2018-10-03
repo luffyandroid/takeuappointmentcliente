@@ -26,12 +26,16 @@ public class CBClienteActivity extends AppCompatActivity {
     //DECLARO INT VARIABLES CALENDARIO
 
     Button btnCBClienteFecha, btnCBClienteHora, btnCBClienteDireccion;
-    TextView etCBClienteFecha, etCBClienteHora;
+    TextView etCBClienteFecha, etCBClienteHora, etCBClienteDireccion;
     DatePickerDialog datePickerDialog;
     int year;
     int month;
     int dayOfMonth;
     Calendar calendar;
+
+    static final String EXTRA_FECHA = "FECHA";
+    static final String EXTRA_HORA = "HORA";
+    static final String EXTRA_DIRECCION = "DIRECCION";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +54,7 @@ public class CBClienteActivity extends AppCompatActivity {
         etCBClienteFecha = findViewById(R.id.etCBClienteFecha);
         btnCBClienteHora = findViewById(R.id.btnCBClienteHora);
         etCBClienteHora = findViewById(R.id.etCBClienteHora);
+        etCBClienteDireccion = findViewById(R.id.etCBClienteDireccion);
 
         //BOTÓN CLICK EN DIRECCIONES
         btnCBClienteDireccion = findViewById(R.id.btnCBClienteDireccion);
@@ -96,6 +101,14 @@ public class CBClienteActivity extends AppCompatActivity {
                 datePickerDialog.show();
             }
         });
+
+        Bundle b = getIntent().getExtras();
+        if (b!=null){
+            etCBClienteFecha.setText(getIntent().getExtras().getString(EXTRA_FECHA));
+            etCBClienteHora.setText(getIntent().getExtras().getString(EXTRA_HORA));
+            etCBClienteDireccion.setText(getIntent().getExtras().getString(EXTRA_DIRECCION));
+        }
+
     }
 
     //BOTON VOLVER ANTERIOR ACTIVITY
@@ -107,6 +120,11 @@ public class CBClienteActivity extends AppCompatActivity {
     //BOTON VOLVER SIGUIENTE ACTIVITY
     public void clickCBClienteSeguirCita(View view) {
         Intent i = new Intent().setClass(getApplicationContext(), DAConfirmacionClienteActivity.class);
+
+        i.putExtra(EXTRA_FECHA, etCBClienteFecha.getText().toString());
+        i.putExtra(EXTRA_HORA, etCBClienteHora.getText().toString());
+        i.putExtra(EXTRA_DIRECCION, etCBClienteDireccion.getText().toString());
+
         startActivity(i);
     }
 

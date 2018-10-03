@@ -96,7 +96,7 @@ public class ZAdaptadorProfesionales extends ArrayAdapter<ZCliente>{
 
     private void cargarImagen(String nombre, final View item, final ImageView ivImagen){
 
-        storageRf.child("imagenes/recetas/"+nombre).getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+        storageRf.child("images/"+nombre).getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
             @Override
             public void onSuccess(Uri uri) {
                 Glide.with(item).load(uri.toString()).into(ivImagen);

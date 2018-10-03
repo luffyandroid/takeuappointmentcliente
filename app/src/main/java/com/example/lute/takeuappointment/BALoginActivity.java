@@ -114,13 +114,13 @@ public class BALoginActivity extends AppCompatActivity {
         String usuario = etBALoginDNI.getText().toString();
         final String contrasena = etBALoginPassword.getText().toString();
         final String empresaElegida = spBALogin.getSelectedItem().toString();
-        /*if (swBALogin.isChecked()) {
+        if (swBALogin.isChecked()) {
             dbRef = FirebaseDatabase.getInstance().getReference().child(empresaElegida + "/profesionales/" + usuario);
             Toast.makeText(getApplicationContext(), "Elige profesional", Toast.LENGTH_SHORT).show();
-        }else{*/
+        }else{
             dbRef = FirebaseDatabase.getInstance().getReference().child(empresaElegida + "/clientes/" + usuario);
             Toast.makeText(getApplicationContext(), "Elige cliente", Toast.LENGTH_SHORT).show();
-        //}
+        }
 
         valueEventListener = new ValueEventListener() {
             @Override
@@ -133,10 +133,11 @@ public class BALoginActivity extends AppCompatActivity {
 
 
                     ZCliente usu = dataSnapshot.getValue(ZCliente.class);
-
+                    ZProfesional usup = dataSnapshot.getValue(ZProfesional.class);
                     String contrasenadb = usu.getCcontrasena();
+                    String contrasenadbp = usup.getPcontrasena();
 
-                    if (!contrasena.equals(contrasenadb)) {
+                    if (!contrasena.equals(contrasenadb) && !contrasena.equals(contrasenadbp)) {
                         // tvFalloLogin.setText("La contraseña no coincide");
                         Toast.makeText(getApplicationContext(), "Password incorrecto", Toast.LENGTH_SHORT).show();
                     } else {

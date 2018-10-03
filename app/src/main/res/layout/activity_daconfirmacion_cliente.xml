@@ -37,18 +37,18 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/tvDAConfClienteHora"
+                    android:id="@+id/tvDAConfClienteUsuario"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     style="@style/Info"
-                    android:text="Hora" />
+                    android:text="Usuario" />
 
                 <TextView
-                    android:id="@+id/tvDAConfClienteDireccion"
+                    android:id="@+id/tvDAConfClienteNombre"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     style="@style/Info"
-                    android:text="Dirección" />
+                    android:text="Nombre" />
 
                 <TextView
                     android:id="@+id/tvDAConfClienteApellidos"
@@ -65,25 +65,26 @@
                     android:text="Fecha" />
 
                 <TextView
+                    android:id="@+id/tvDAConfClienteHora"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/Info"
+                    android:text="Hora" />
+
+                <TextView
+                    android:id="@+id/tvDAConfClienteDireccion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/Info"
+                    android:text="Dirección" />
+
+                <TextView
                     android:id="@+id/tvDAConfClienteLugar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     style="@style/Info"
                     android:text="Lugar" />
 
-                <TextView
-                    android:id="@+id/tvDAConfClienteUsuario"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    style="@style/Info"
-                    android:text="Usuario" />
-
-                <TextView
-                    android:id="@+id/tvDAConfClienteNombre"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    style="@style/Info"
-                    android:text="Nombre" />
             </LinearLayout>
         </ScrollView>
 

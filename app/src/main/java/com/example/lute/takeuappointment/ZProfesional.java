@@ -60,8 +60,14 @@ public class ZProfesional implements Parcelable{
         this.p9 = p9;
     }
 
+
+
     public ZProfesional(Parcel p){
         readfromParcel(p);
+    }
+
+    public ZProfesional(){
+
     }
 
     public String getPdni() {

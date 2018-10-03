@@ -69,6 +69,9 @@ public class ZCliente implements Parcelable{
         readfromParcel(p);
     }
 
+    public ZCliente(){
+
+    }
 
     public String getCdni() {
         return cdni;

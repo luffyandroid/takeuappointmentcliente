@@ -7,14 +7,22 @@ import android.net.NetworkInfo;
 import android.net.Uri;
 import android.preference.PreferenceManager;
 import android.provider.MediaStore;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
@@ -24,6 +32,10 @@ public class CAProfesionalesActivity extends AppCompatActivity {
     ArrayList<ZCliente> listaClientes = new ArrayList<ZCliente>();
     ListView listCAProfesionales;
 
+    DatabaseReference dbRef;
+    ValueEventListener valueEventListener;
+
+    ZCliente usu=null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,9 +51,28 @@ public class CAProfesionalesActivity extends AppCompatActivity {
 
 
         //MOSTRAR LISTA DE CLIENTES
-        datosClientes();
+        /*datosClientes();
+
+        dbRef = FirebaseDatabase.getInstance().getReference().child("pruebetic/profesonal");
+
+        valueEventListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                ZCliente cliente = dataSnapshot.getValue(ZCliente.class);
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        };*/
+        ///////////////////////////////////////////////////////////////////
+        cargarDatosFirebase();
 
         listCAProfesionales = (ListView)findViewById(R.id.listCAProfesionales);
+
+
 
     }
 
@@ -52,7 +83,7 @@ public class CAProfesionalesActivity extends AppCompatActivity {
     }
 
     //BOTON CARGAR IMAGEN
-    public void ClickImagen (View view){
+    /*public void ClickImagen (View view){
         cargarImagen();
     }
 
@@ -80,7 +111,7 @@ public class CAProfesionalesActivity extends AppCompatActivity {
         listaClientes.add(new ZCliente("","","","","","","","","","","","","","","","","","","foto6"));
         listaClientes.add(new ZCliente("","","","","","","","","","","","","","","","","","","foto7"));
         listaClientes.add(new ZCliente("","","","","","","","","","","","","","","","","","","foto8"));
-    }
+    }*/
 
     //COMPROBACIÓN CONEXIÓN INTERNET
     public static boolean verificaConexion(Context ctx) {
@@ -99,4 +130,40 @@ public class CAProfesionalesActivity extends AppCompatActivity {
         return bConectado;
 
     }
+
+    private void cargarListView (DataSnapshot dataSnapshot){
+
+        listaClientes.add(dataSnapshot.getValue(ZCliente.class));
+
+        ZAdaptadorProfesionales adaptadorProfesionales=new ZAdaptadorProfesionales(this, listaClientes);
+
+        listCAProfesionales.setAdapter(adaptadorProfesionales);
+
+    }
+
+    private void cargarDatosFirebase(){
+
+
+        dbRef = FirebaseDatabase.getInstance().getReference().child("pruebetic").child("clientes");
+
+
+        valueEventListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                listaClientes.clear();
+                for (DataSnapshot recetaDataSnapshot : dataSnapshot.getChildren()) {
+                    cargarListView(recetaDataSnapshot);
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Log.e("Prueba profesional", "DATABASE ERROR");
+            }
+        };
+
+        dbRef.addValueEventListener(valueEventListener);
+
+    }
+
 }

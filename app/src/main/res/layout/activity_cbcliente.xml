@@ -74,16 +74,15 @@
                 android:background="@drawable/selector_btn_verdebase"
                 android:stateListAnimator="@null"
                 android:drawableLeft="@drawable/ico_btn_clock"
-                android:text="Hora"
-                android:onClick="clickCBClienteHora"/>
+                android:text="Hora"/>
 
             <EditText
-                android:id="@+id/etCBDireccion"
+                android:id="@+id/etCBClienteDireccion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="@dimen/d5"
                 android:ems="20"
-                android:inputType="date"
+                android:inputType="textPersonName"
                 android:text="Dirección" />
 
             <Button
