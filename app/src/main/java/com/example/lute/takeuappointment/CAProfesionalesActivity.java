@@ -16,6 +16,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -31,11 +32,12 @@ public class CAProfesionalesActivity extends AppCompatActivity {
     ImageView foto;
     ArrayList<ZCliente> listaClientes = new ArrayList<ZCliente>();
     ListView listCAProfesionales;
+    TextView tvCAProfecionalesUsuario;
 
     DatabaseReference dbRef;
     ValueEventListener valueEventListener;
 
-    ZCliente usu=null;
+    ZProfesional usup=null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,7 +50,7 @@ public class CAProfesionalesActivity extends AppCompatActivity {
                     .show();
         }
 
-
+        tvCAProfecionalesUsuario = (TextView)findViewById(R.id.tvCAProfesionalesUsuario);
 
         //MOSTRAR LISTA DE CLIENTES
         /*datosClientes();
@@ -68,6 +70,15 @@ public class CAProfesionalesActivity extends AppCompatActivity {
             }
         };*/
         ///////////////////////////////////////////////////////////////////
+
+
+        Bundle b= getIntent().getExtras();
+
+        if (b!=null){
+
+            usup = b.getParcelable(BALoginActivity.EXTRA_USUARIO);
+            tvCAProfecionalesUsuario.setText(usup.getPnombre());
+        }
         cargarDatosFirebase();
 
         listCAProfesionales = (ListView)findViewById(R.id.listCAProfesionales);
@@ -144,7 +155,7 @@ public class CAProfesionalesActivity extends AppCompatActivity {
     private void cargarDatosFirebase(){
 
 
-        dbRef = FirebaseDatabase.getInstance().getReference().child("pruebetic").child("clientes");
+        dbRef = FirebaseDatabase.getInstance().getReference().child(usup.getPempresa()).child("clientes");
 
 
         valueEventListener = new ValueEventListener() {
@@ -163,6 +174,30 @@ public class CAProfesionalesActivity extends AppCompatActivity {
         };
 
         dbRef.addValueEventListener(valueEventListener);
+
+    }
+
+    public void datosUsuario() {
+
+        String usuario = tvCAProfecionalesUsuario.getText().toString();
+
+
+        dbRef = FirebaseDatabase.getInstance().getReference().child(usup.getPempresa()).child(usuario);
+
+        valueEventListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                usup = dataSnapshot.getValue(ZProfesional.class);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Log.e("CAProfesionalesActivity", "DATABASE ERROR");
+            }
+        };
+        dbRef.addValueEventListener(valueEventListener);
+
 
     }
 

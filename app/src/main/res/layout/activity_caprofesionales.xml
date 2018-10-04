@@ -21,6 +21,15 @@
             android:text="• CITAS PROGRAMADAS •"
             android:textAlignment="center" />
 
+        <TextView
+            android:id="@+id/tvCAProfesionalesUsuario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Cabecera"
+            android:text=""
+            android:textAlignment="center"
+            android:visibility="gone"/>
+
     </LinearLayout>
 
     <ListView

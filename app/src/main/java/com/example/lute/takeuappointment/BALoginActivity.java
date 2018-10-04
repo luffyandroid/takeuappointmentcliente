@@ -141,11 +141,19 @@ public class BALoginActivity extends AppCompatActivity {
                         // tvFalloLogin.setText("La contraseña no coincide");
                         Toast.makeText(getApplicationContext(), "Password incorrecto", Toast.LENGTH_SHORT).show();
                     } else {
+                        if (contrasena.equals(contrasenadb)) {
+                            Intent mainIntent = new Intent().setClass(getApplicationContext(), BBMenuClienteActivity.class);
+                            mainIntent.putExtra(EXTRA_USUARIO, usu);
+                            startActivity(mainIntent);
+                            finish();
+                        }else{
 
-                        Intent mainIntent = new Intent().setClass(getApplicationContext(), BBMenuClienteActivity.class);
-                        mainIntent.putExtra(EXTRA_USUARIO, usu);
-                        startActivity(mainIntent);
-                        finish();
+                            Intent mainIntent = new Intent().setClass(getApplicationContext(), CAProfesionalesActivity.class);
+                            mainIntent.putExtra(EXTRA_USUARIO, usup);
+                            startActivity(mainIntent);
+                            finish();
+
+                        }
 
                     }
                 }
