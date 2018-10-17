@@ -4,13 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/Blanco"
     tools:context=".AASplashActivity">
 
-    <ImageView
-        android:id="@+id/ivAASplash"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animatidfaaon_view2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:padding="@dimen/d50"
-        app:srcCompat="@drawable/logo_agenda_splash" />
+        app:lottie_autoPlay="true"
+        app:lottie_fileName="splash_take.json"
+        app:lottie_imageAssetsFolder="assets"
+        app:lottie_loop="true" />
+
+
 </LinearLayout>

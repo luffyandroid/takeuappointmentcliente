@@ -18,7 +18,7 @@
         android:roundIcon="@drawable/logo_agenda_splash"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".BALoginActivity">
+        <activity android:name=".AASplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -26,7 +26,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".AASplashActivity"
+            android:name=".BALoginActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".BBMenuClienteActivity"
