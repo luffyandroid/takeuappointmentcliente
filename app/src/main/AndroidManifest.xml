@@ -49,7 +49,6 @@
         <activity
             android:name=".PruebaProfesionales"
             android:screenOrientation="portrait" />
-        <activity android:name=".pruebaFoto" />
         <activity android:name=".CBHorasDialog"></activity>
     </application>
 

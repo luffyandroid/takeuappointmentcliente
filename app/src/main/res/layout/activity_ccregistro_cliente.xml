@@ -40,13 +40,14 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
                 android:orientation="vertical">
 
                 <Switch
                     android:id="@+id/swchCCRegistroCambio"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:text="Cambiar si se registra a un profesional" />
 
                 <EditText
@@ -55,6 +56,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:inputType="textPersonName"
+                    android:layout_weight="1"
                     android:hint="DNI" />
 
                 <EditText
@@ -63,6 +65,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:inputType="textPassword"
+                    android:layout_weight="1"
                     android:hint="Contraseña"/>
 
                 <EditText
@@ -79,6 +82,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:inputType="textPersonName"
+                    android:layout_weight="1"
                     android:hint="Nombre" />
 
                 <EditText
@@ -87,6 +91,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:inputType="textPersonName"
+                    android:layout_weight="1"
                     android:hint="Apellidos" />
 
                 <EditText
@@ -96,6 +101,7 @@
                     android:ems="10"
                     android:inputType="textEmailAddress"
                     android:hint="Email"
+                    android:layout_weight="1"
                     android:visibility="visible"/>
 
                 <EditText
@@ -114,6 +120,7 @@
                     android:ems="10"
                     android:inputType="textPersonName"
                     android:hint="Ciudad"
+                    android:layout_weight="1"
                     android:visibility="visible"/>
 
                 <EditText
@@ -149,23 +156,47 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:inputType="textPersonName"
+                    android:layout_weight="1"
                     android:hint="Dirección" />
 
-                <ImageView
+                <Button
                     android:id="@+id/ivCCRegistroFoto"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:srcCompat="@android:drawable/ic_menu_camera"
+                    android:layout_marginVertical="@dimen/d5"
+                    android:textAlignment="textStart"
+                    android:drawablePadding="@dimen/d10"
+                    android:background="@drawable/selector_btn_verdebase"
+                    android:stateListAnimator="@null"
+                    android:drawableLeft="@drawable/ico_btn_camara"
+                    android:text="Tomar foto del cliente"
+                    android:layout_weight="1"
                     android:onClick="ClickImagenRegistro"/>
 
-                <Button
-                    android:id="@+id/btnCCRegistrarRegistrar"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Registrar cliente"
-                    android:onClick="clickRegistrar"/>
             </LinearLayout>
         </ScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnCCRegistrarRegistrar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/selector_btn_verdefinal"
+                android:drawableRight="@drawable/ico_btn_confirmacion"
+                android:drawablePadding="@dimen/d10"
+                android:onClick="clickRegistrar"
+                android:paddingRight="@dimen/d5"
+                android:stateListAnimator="@null"
+                android:text="Registrar cliente"
+                android:textAlignment="textEnd" />
+
+        </LinearLayout>
 
     </RelativeLayout>
 
